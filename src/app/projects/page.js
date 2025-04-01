@@ -22,7 +22,7 @@ export default function ProjectsPage() {
   const closeModal = () => {
     bleep?.play();
     setShowModal(false);
-    setTimeout(() => router.push("/"), 300);
+    //setTimeout(() => router.push("/"), 300);
   };
 
   return (
