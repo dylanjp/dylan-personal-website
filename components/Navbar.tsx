@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { createBleep } from "@arwes/bleeps";
+import { FaLinkedin, FaGithub, FaItchIo, FaBars, FaTimes } from "react-icons/fa";
 import styles from "./Navbar.module.css";
-import { FaLinkedin, FaGithub, FaItchIo } from "react-icons/fa";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -16,8 +16,7 @@ export default function Navbar() {
     { name: "About", href: "/about" },
   ];
 
-  // Only show center links when not on the homepage.
-  const showCenterLinks = pathname !== "/";
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const bleep = createBleep({
@@ -39,14 +38,14 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-      {/* Left side - Animated Retro Icon with Home Link */}
+      {/* Left side - Retro Home Icon */}
       <Link href="/" className={styles.retroIcon}>
         <span className={styles.innerText}>DJP</span>
       </Link>
 
-      {/* Center - Conditional navigation links */}
-      {showCenterLinks && (
-        <div className={styles.links}>
+      {/* Center Links for Desktop: Only show if not on the home page */}
+      {pathname !== "/" && (
+        <div className={styles.centerLinks}>
           {pages.map((page) => (
             <Link
               key={page.href}
@@ -59,31 +58,55 @@ export default function Navbar() {
         </div>
       )}
 
-      {/* Right Side - Icons & Version */}
-      <div className={styles.socials}>
-        <a
-          href="https://www.linkedin.com/in/dylanjohnpratt/"
-          target="_blank"
-          className={styles.icon}
-        >
+      {/* Right Side for Desktop: Social Icons & Version */}
+      <div className={styles.socialsDesktop}>
+        <a href="https://www.linkedin.com/in/dylanjohnpratt/" target="_blank" className={styles.icon}>
           <FaLinkedin />
         </a>
-        <a
-          href="https://github.com/dylanjp"
-          target="_blank"
-          className={styles.icon}
-        >
+        <a href="https://github.com/dylanjp" target="_blank" className={styles.icon}>
           <FaGithub />
         </a>
-        <a
-          href="https://legendaryepics.itch.io/"
-          target="_blank"
-          className={styles.icon}
-        >
+        <a href="https://legendaryepics.itch.io/" target="_blank" className={styles.icon}>
           <FaItchIo />
         </a>
         <span className={styles.version}>v1.0.0</span>
       </div>
+
+      {/* Mobile Controls: Version & Hamburger Icon */}
+      <div className={styles.mobileControls}>
+        <span className={styles.version}>v1.0.0</span>
+        <div className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </div>
+      </div>
+
+      {/* Mobile Pop-out Submenu */}
+      {menuOpen && (
+        <div className={styles.mobileMenu}>
+          {pages.map((page) => (
+            <Link
+              key={page.href}
+              href={page.href}
+              className={`${styles.mobileNavLink} ${pathname === page.href ? styles.activeMobileNavLink : ""}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              {page.name}
+            </Link>
+          ))}
+          {/* Social Icons at the bottom of the mobile menu */}
+          <div className={styles.mobileSocials}>
+            <a href="https://www.linkedin.com/in/dylanjohnpratt/" target="_blank" className={styles.icon}>
+              <FaLinkedin />
+            </a>
+            <a href="https://github.com/dylanjp" target="_blank" className={styles.icon}>
+              <FaGithub />
+            </a>
+            <a href="https://legendaryepics.itch.io/" target="_blank" className={styles.icon}>
+              <FaItchIo />
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

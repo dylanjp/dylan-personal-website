@@ -67,7 +67,7 @@
 }
 
 .retroName {
-  font-family:"Orbitron";
+  font-family: "Orbitron";
   font-size: 48px;
   color: #00F8F8; /* Neon cyan */
   text-shadow: 0 0 2px #00F8F8, 0 0 4px #00F8F8, 0 0 8px #FF00FF; /* Synthwave glow */
@@ -81,16 +81,16 @@
   text-shadow: 0 0 2px #00F8F8, 0 0 2px #00F8F8, 0 0 2px #00F8F8; /* Synthwave glow */
   text-align: center;
   margin-top: -25px; /* Adjust this value to bring it closer */
-  font-weight: lighter; /* Ensures it's not bold */
+  font-weight: lighter;
 }
 
 .ctas {
   font-family: "TechMono";
   display: flex;
   gap: 18px;
-  justify-content: center; /* Centers items horizontally */
-  align-items: center; /* Centers items vertically (if needed) */
-  margin-top: -25px; /* Adjust this value to bring it closer */
+  justify-content: center;
+  align-items: center;
+  margin-top: -25px;
 }
 
 .ctas a {
@@ -100,10 +100,7 @@
   padding: 0 20px;
   border: none;
   border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -125,7 +122,6 @@
 }
 
 .navLink::before {
-  /*content: "🔗"; /* Example icon, change to match your design */
   margin-right: 8px;
   font-size: 16px;
   transition: transform 0.3s ease;
@@ -144,7 +140,7 @@
 }
 
 .navLink:hover {
-  color: rgb(255, 247, 5); /* Change color on hover */
+  color: rgb(255, 247, 5);
 }
 
 .navLink:hover::after {
@@ -153,7 +149,7 @@
 }
 
 .navLink:hover::before {
-  transform: rotate(360deg); /* Rotate icon for a cool effect */
+  transform: rotate(360deg);
 }
 
 a.primary {
@@ -189,12 +185,10 @@ a.secondary {
     background: var(--button-primary-hover);
     border-color: transparent;
   }
-
   a.secondary:hover {
     background: var(--button-secondary-hover);
     border-color: transparent;
   }
-
   .footer a:hover {
     text-decoration: underline;
     text-underline-offset: 4px;
@@ -206,36 +200,71 @@ a.secondary {
     padding: 32px;
     padding-bottom: 80px;
   }
-
   .main {
     align-items: center;
   }
-
   .main ol {
     text-align: center;
   }
-
+  /* Keep CTA links in a horizontal row without wrapping */
   .ctas {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    justify-content: center;
   }
-
   .ctas a {
     font-size: 14px;
     height: 40px;
     padding: 0 16px;
   }
-
   a.secondary {
     min-width: auto;
   }
-
   .footer {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
   }
+  /* Fluid typography for titles */
+  .retroName {
+    font-size: clamp(24px, 8vw, 48px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .retroSubTitle {
+    font-size: clamp(16px, 4vw, 24px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
+/* Additional adjustments for very small screens (max-width: 400px) */
+@media (max-width: 400px) {
+  .page {
+    padding: 16px;
+    padding-bottom: 60px;
+  }
+  .ctas {
+    gap: 5px;
+  }
+  .ctas a {
+    font-size: clamp(12px, 4vw, 14px);
+    height: 36px;
+    padding: 0 8px;
+  }
+  .retroName {
+    font-size: clamp(20px, 10vw, 40px);
+  }
+  .retroSubTitle {
+    font-size: clamp(14px, 5vw, 20px);
+  }
+}
+
+
+  
 @media (prefers-color-scheme: dark) {
   .logo {
     filter: invert();
