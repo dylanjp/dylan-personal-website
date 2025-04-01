@@ -1,45 +1,35 @@
+// pages/projects/index.js (or .jsx)
 "use client";
 
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import Background from "@/components/Background";
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
-import { createBleep } from "@arwes/bleeps";
+import Background from "@/components/Background";
+import ProjectCard from "@/components/ProjectCard";
+import ProjectModal from "@/components/ProjectModal";
+import projectsData from "@/data/projectsData"; // Adjust path as needed
 import styles from "./projects.module.css";
 
 export default function ProjectsPage() {
-  const [showModal, setShowModal] = useState(false);
-  const router = useRouter();
-
-  useEffect(() => {
-    setShowModal(true);
-  }, []);
-
-  const bleep = createBleep({
-    sources: [{ src: "/sounds/click.mp3", type: "audio/mpeg" }],
-  });
-
-  const closeModal = () => {
-    bleep?.play();
-    setShowModal(false);
-    //setTimeout(() => router.push("/"), 300);
-  };
+  const [selectedProject, setSelectedProject] = useState(null);
 
   return (
     <div className={styles.page}>
       <Navbar />
       <Background />
-      <h1 className={styles.title}>Coming Soon!</h1>
-      <p className={styles.text}>Welcome to the Projects page!</p>
+      <h1 className={styles.title}>Projects</h1>
       
-      {showModal && (
-        <div className={styles.modalOverlay}>
-          <div className={styles.modal}>
-            <h2 className={styles.modalTitle}>Coming Soon</h2>
-            <p className={styles.modalText}>The Projects page is under construction and will be available soon.</p>
-            <button className={styles.closeButton} onClick={closeModal}>Close</button>
-          </div>
+      {projectsData.length > 0 ? (
+        <div className={styles.grid}>
+          {projectsData.map((project) => (
+            <ProjectCard key={project.id} project={project} onClick={setSelectedProject} />
+          ))}
         </div>
+      ) : (
+        <p className={styles.text}>More info is coming soon.</p>
+      )}
+
+      {selectedProject && (
+        <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
       )}
     </div>
   );

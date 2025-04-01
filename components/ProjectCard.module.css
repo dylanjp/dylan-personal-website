@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "TechMono";
+  src: url("/fonts/ShareTechMono-Regular.ttf") format("truetype");
+}
+
+.card {
+    font-family: "TechMono";
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    font-family: "TechMono";
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00ffff;
+  }
+  
+  /* Fix the image container height and crop extra parts */
+  .cardImage {
+    width: 100%;
+    height: 250px; /* fixed height for uniformity */
+    object-fit: cover; /* ensures the image fills the container */
+    display: block;
+  }
+  
+  .cardTitle {
+    font-family: "TechMono";
+    font-size: 1.2rem;
+    color: #00ffff;
+    padding: 10px;
+    text-align: center;
+    /* Remove extra spacing below if needed */
+    margin: 0;
+  }
+  
