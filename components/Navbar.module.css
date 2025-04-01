@@ -1,0 +1,119 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    z-index: 100;
+    font-family: "Orbitron", sans-serif;
+  }
+  
+  .retroIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #00FFFF;
+    box-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulseGlow 2s infinite alternate ease-in-out, rotateCircle 4s linear infinite;
+    position: relative;
+    font-size: 10px;
+    line-height: 1;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect - changes to magenta */
+.retroIcon:hover {
+    border-color: #FF00FF;
+    box-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF, 0 0 30px #FF00FF;
+}
+
+.innerText {
+    font-size: 10px;
+    line-height: 1;
+    text-align: center;
+    overflow: hidden;
+    display: block;
+    color: #00FFFF;
+    transition: color 0.3s ease-in-out;
+}
+
+.retroIcon:hover .innerText {
+    color: #FF00FF;
+}
+
+/* Inner animated ring */
+.retroIcon::before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    border: 2px dashed rgba(0, 255, 255, 0.5);
+    animation: rotateDashed 3s linear infinite;
+}
+
+/* Pulsing Glow Animation */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF; }
+    100% { box-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF; }
+}
+
+/* Slow Rotation */
+@keyframes rotateCircle {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Dashed Inner Ring Rotation */
+@keyframes rotateDashed {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+  
+  .links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navLink {
+    color: #00FFFF;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  .navLink:hover {
+    color: #FF00FF;
+    text-shadow: 0 0 10px #FF00FF, 0 0 20px #00FFFF;
+  }
+  
+  .socials {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .icon {
+    font-size: 24px;
+    color: #00FFFF;
+    transition: color 0.3s, transform 0.2s;
+  }
+  
+  .icon:hover {
+    color: #FF00FF;
+    transform: scale(1.1);
+  }
+  
+  .version {
+    font-size: 14px;
+    color: #00FFFF;
+    padding-left: 10px;
+  }

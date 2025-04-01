@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Orbitron";
+  src: url("/fonts/Orbitron-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "TechMono";
+  src: url("/fonts/ShareTechMono-Regular.ttf") format("truetype");
+}
+
 .page {
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
@@ -56,9 +66,31 @@
   font-weight: 600;
 }
 
+.retroName {
+  font-family:"Orbitron";
+  font-size: 48px;
+  color: #00F8F8; /* Neon cyan */
+  text-shadow: 0 0 2px #00F8F8, 0 0 4px #00F8F8, 0 0 8px #FF00FF; /* Synthwave glow */
+  text-align: center;
+}
+
+.retroSubTitle {
+  font-family: "TechMono";
+  font-size: 24px;
+  color: #00F8F8; /* Neon cyan */
+  text-shadow: 0 0 2px #00F8F8, 0 0 2px #00F8F8, 0 0 2px #00F8F8; /* Synthwave glow */
+  text-align: center;
+  margin-top: -25px; /* Adjust this value to bring it closer */
+  font-weight: lighter; /* Ensures it's not bold */
+}
+
 .ctas {
+  font-family: "TechMono";
   display: flex;
-  gap: 16px;
+  gap: 18px;
+  justify-content: center; /* Centers items horizontally */
+  align-items: center; /* Centers items vertically (if needed) */
+  margin-top: -25px; /* Adjust this value to bring it closer */
 }
 
 .ctas a {
@@ -76,9 +108,52 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 20px;
   font-weight: 500;
+}
+
+.navLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  font-size: 18px;
+  color: #FF00FF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navLink::before {
+  /*content: "🔗"; /* Example icon, change to match your design */
+  margin-right: 8px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #FF00FF;
+  border-bottom: 2px solid #FF00FF;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.navLink:hover {
+  color: rgb(255, 247, 5); /* Change color on hover */
+}
+
+.navLink:hover::after {
+  width: 50%;
+  height: 50%;
+}
+
+.navLink:hover::before {
+  transform: rotate(360deg); /* Rotate icon for a cool effect */
 }
 
 a.primary {
