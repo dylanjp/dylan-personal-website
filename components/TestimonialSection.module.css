@@ -1,0 +1,124 @@
+.testimonialContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    position: relative;
+    height: 160px; /* Fixed height to prevent layout shifts */
+    overflow: hidden;
+  }
+  
+  /* Ensures arrows stay properly positioned */
+  .arrow {
+    font-size: 2rem;
+    color: #00ffff;
+    cursor: pointer;
+    transition: transform 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .arrow-left {
+    left: -40px; /* Increased this value to push the arrow further out */
+  }
+  
+  .arrow-right {
+    right: -40px; /* Increased this value to push the arrow further out */
+  }
+  
+  /* Testimonial Text - Adjust size based on screen width */
+  .testimonialWrapper {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 40px; /* Extra space on left for small screens */
+    padding-right: 40px; /* Extra space on right for small screens */
+  }
+  
+  .testimonial {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    position: absolute;
+    height: 100%; /* Ensure fixed height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px; /* Adds some padding around text */
+  }
+  
+  .text {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    word-wrap: break-word; /* Ensure text wraps in small spaces */
+    white-space: normal;  /* Allow text to wrap normally */
+  }
+  
+  .author {
+    font-size: 1rem;
+    color: #ff00ff;
+    font-weight: bold;
+  }
+  
+  /* Mobile-Friendly Adjustments */
+  @media (max-width: 768px) {
+    .testimonialContainer {
+      flex-direction: row;
+      width: 95%;
+      height: 180px; /* Adjusted for mobile consistency */
+    }
+  
+    .arrow {
+      font-size: 1.5rem; /* Slightly smaller arrows on mobile */
+    }
+  
+    .arrow-left {
+      left: -20px; /* Adjusted to give more space */
+    }
+  
+    .arrow-right {
+      right: -20px; /* Adjusted to give more space */
+    }
+  
+    .text {
+      font-size: 1rem;
+    }
+  
+    .author {
+      font-size: 0.9rem;
+    }
+  
+    /* Adjust padding for mobile to give more room */
+    .testimonialWrapper {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .arrow {
+      font-size: 1.2rem; /* Smaller arrows for very small screens */
+    }
+  
+    .text {
+      font-size: 0.9rem;
+    }
+  
+    .author {
+      font-size: 0.8rem;
+    }
+  
+    /* Further adjust padding for smaller screens */
+    .testimonialWrapper {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  

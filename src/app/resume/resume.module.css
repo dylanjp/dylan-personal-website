@@ -1,80 +1,115 @@
-/* projects.module.css */
+/* resume.module.css */
+
+@font-face {
+  font-family: "TechMono";
+  src: url("/fonts/ShareTechMono-Regular.ttf") format("truetype");
+}
 
 .page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    color: #00ffff;
-    font-family: 'Orbitron', sans-serif;
-    text-align: center;
-  }
-  
-  .title {
-    font-size: 3rem;
-    text-shadow: 0 0 10px #00ffff;
-  }
-  
-  .text {
-    font-size: 1.5rem;
-  }
-  
-  .modalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-  }
-  
-  .modal {
-    background: black;
-    border: 2px solid #00ffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #00ffff;
-    animation: fadeIn 0.5s ease-in-out;
-    max-width: 400px;
-    text-align: center;
-  }
-  
-  .modalTitle {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    text-shadow: 0 0 5px #00ffff;
-  }
-  
-  .modalText {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .closeButton {
-    background: black;
-    border: 2px solid #00ffff;
-    color: #00ffff;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1rem;
-    text-transform: uppercase;
-    box-shadow: 0 0 10px #00ffff;
-    transition: all 0.3s;
-  }
-  
-  .closeButton:hover {
-    background: #00ffff;
-    color: black;
-    box-shadow: 0 0 20px #00ffff;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* Cyberpunk grid background (replace with your background image) */
+  background: url('/images/cyber-grid.jpg') center/cover no-repeat;
+  color: #00ffff;
+  font-family: "TechMono";
+  text-align: center;
+  padding: 40px;
+  gap: 32px;
+}
+
+.hero {
+  animation: fadeIn 1s ease-out;
+}
+
+.title {
+  font-size: 3rem;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-top: 16px;
+}
+
+.downloadButton {
+  font-family: "TechMono";
+  background: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  margin-top: 20px;
+}
+
+.downloadButton:hover {
+  background: #00ffff;
+  color: black;
+  transform: scale(1.05);
+}
+
+.techSection {
+  width: 100%;
+  margin: 40px 0;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.techTile {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00ffff;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.techTile:hover {
+  box-shadow: 0 0 15px #00ffff;
+}
+
+.techIcon {
+  width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+
+.testimonials, .philosophy {
+  max-width: 800px;
+}
+
+.testimonial {
+  font-size: 1.2rem;
+  margin: 16px 0;
+  font-style: italic;
+}
+
+.author {
+  font-size: 1rem;
+  color: #ff00ff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -14,23 +14,32 @@ export default function ProjectsPage() {
 
   return (
     <div className={styles.page}>
-      <Navbar />
-      <Background />
-      <h1 className={styles.title}>Projects</h1>
-      
-      {projectsData.length > 0 ? (
-        <div className={styles.grid}>
-          {projectsData.map((project) => (
-            <ProjectCard key={project.id} project={project} onClick={setSelectedProject} />
-          ))}
-        </div>
-      ) : (
-        <p className={styles.text}>More info is coming soon.</p>
-      )}
+      {/* Static Background */}
+      <div className={styles.pageBackground}><Background/></div>
 
-      {selectedProject && (
-        <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
-      )}
+      <div className={styles.pageContent}>
+        <Navbar />
+        <h1 className={styles.title}>Projects</h1>
+
+        {projectsData.length > 0 ? (
+          <div className={styles.grid}>
+            {projectsData.map((project, index) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                onClick={setSelectedProject}
+                index={index} // Pass index for staggered animation
+              />
+            ))}
+          </div>
+        ) : (
+          <p className={styles.text}>More info is coming soon.</p>
+        )}
+
+        {selectedProject && (
+          <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+        )}
+      </div>
     </div>
   );
 }
