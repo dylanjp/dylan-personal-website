@@ -4,22 +4,29 @@ const projects = [
       id: 1,
       title: "Project SwordBreak",
       image: "/images/swordBreak.png",
-      description: "This project is about creating a futuristic interface for data visualization.",
+      description: "Project Swordbreak is a solo-developed action-adventure game built in Unreal Engine, leveraging C++ and Blueprints for fluid combat, responsive movement, and immersive world interaction. Key technical highlights include a custom-built randomizer system, custom localization system, and an advanced character controller.",
       link: "https://legendaryepics.itch.io/project-swordbreak"
     },
     {
       id: 2,
       title: "Neon Knight",
       image: "/images/neonKnight.png",
-      description: "This project explores next-gen web animations and interactions.",
+      description: "This project was my entry for the 2023 Epic MegaJam—a fast-paced third-person bullet-hell. It features a custom Niagara particle collision system.",
       link: "https://legendaryepics.itch.io/neon-knight"
     },
     {
       id: 3,
       title: "Music Library App",
       image: "/images/musicLib.png",
-      description: "This project explores next-gen web animations and interactions.",
+      description: "This is a public-facing web application I built professionally while working at The Church of Jesus Christ of Latter-day Saints. It features a React frontend with a Node.js middleware layer that interacts with multiple AWS Lambda functions. Deployed on AWS, it leverages services like CloudFront, API Gateway, and S3 for scalability and performance.",
       link: "https://www.churchofjesuschrist.org/media/music?lang=eng"
+    },
+    {
+      id: 4,
+      title: "Project ISO",
+      image: "/images/projectIso.png",
+      description: "????",
+      link: ""
     },
     // Add more project objects here
   ];
