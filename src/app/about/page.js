@@ -1,48 +1,127 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Background from "@/components/Background";
 import Navbar from "@/components/Navbar";
 import { createBleep } from "@arwes/bleeps";
-import { useRouter } from "next/navigation";
+import { aboutPageData } from "@/data/aboutPageData";
 import styles from "./about.module.css";
 
 export default function AboutPage() {
-  const [showModal, setShowModal] = useState(false);
   const router = useRouter();
-  
-  useEffect(() => {
-    setShowModal(true);
-  }, []);
-  
-  const bleep = createBleep({
-    sources: [{ src: "/sounds/click.mp3", type: "audio/mpeg" }],
-  });
-  
-  const handleClose = () => {
-    bleep?.play();
-    setShowModal(false);
-    setTimeout(() => {
-      router.push("/");
-    }, 500);
-  };
+  const currentYear = new Date().getFullYear();
+
+  // Extract all tiles
+  const profilePictureTile = aboutPageData.find(tile => tile.id === "profile-picture");
+  const aboutMeTile = aboutPageData.find(tile => tile.id === "about-me");
+  const pokemonTeamTile = aboutPageData.find(tile => tile.id === "pokemon-team");
+  const stepCounterTile = aboutPageData.find(tile => tile.id === "step-counter");
+  const smashStatsTile = aboutPageData.find(tile => tile.id === "smash-stats");
+  const currentGamesTile = aboutPageData.find(tile => tile.id === "current-games");
+  const currentBooksTile = aboutPageData.find(tile => tile.id === "current-books");
 
   return (
     <div className={styles.page}>
       <Navbar />
       <Background />
-      <h1 className={styles.title}>Coming Soon!</h1>
-      <p className={styles.text}>Welcome to the About page!</p>
-      
-      {showModal && (
-        <div className={styles.modalOverlay}>
-          <div className={styles.modal}>
-            <h2 className={styles.modalTitle}>Coming Soon</h2>
-            <p className={styles.modalText}>The "About Me" page is under construction and will be available soon.</p>
-            <button className={styles.closeButton} onClick={handleClose}>Close</button>
+
+      <div className={styles.tilesContainer}>
+        {/* Left Column */}
+        <div className={styles.tileColumn}>
+          <div className={styles.profileTile}>
+            <h2>{profilePictureTile.title}</h2>
+            <img
+              src={profilePictureTile.imageSrc}
+              alt={profilePictureTile.title}
+              className={styles.profileImage}
+            />
+          </div>
+
+          <div className={styles.stepTile}>
+            <h2>{stepCounterTile.title}</h2>
+            <div className={styles.stepCounter}>
+              {stepCounterTile.content}
+              <span className={styles.stepLabel}>STEPS TAKEN</span>
+            </div>
           </div>
         </div>
-      )}
+
+        {/* Middle Column */}
+        <div className={styles.tileColumn}>
+          <div className={styles.aboutTile}>
+            <h2>{aboutMeTile.title}</h2>
+            <p>{aboutMeTile.content}</p>
+          </div>
+
+          <div className={styles.smashTile}>
+            <h2>{smashStatsTile.title}</h2>
+            <div className={styles.smashStats}>
+              <div className={styles.statItem}>
+                <span className={styles.statLabel}>GSP: </span>
+                <span className={styles.statValue}>{smashStatsTile.content.gsp}</span>
+              </div>
+              <div className={styles.statItem}>
+                <span className={styles.statLabel}>BATTLES: </span>
+                <span className={styles.statValue}>{smashStatsTile.content.battles}</span>
+              </div>
+              <div className={styles.statItem}>
+                <span className={styles.statLabel}>TOTAL KOs: </span>
+                <span className={styles.statValue}>{smashStatsTile.content.kos}</span>
+              </div>
+              <div className={styles.statItem}>
+                <span className={styles.statLabel}>ELITE SINCE: </span>
+                <span className={styles.statValue}>{smashStatsTile.content.stage}</span>
+              </div>
+            </div>
+            <div className={styles.smashCharacters}>
+              {smashStatsTile.content.characters.map((character, index) => (
+                <img
+                  key={index}
+                  src={`/images/smash-${character.toLowerCase()}.png`}
+                  alt={character}
+                  className={styles.smashCharacter}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column */}
+        <div className={styles.tileColumn}>
+          <div className={styles.pokemonTile}>
+            <h2>{pokemonTeamTile.title}</h2>
+            <div className={styles.pokemonGrid}>
+              {pokemonTeamTile.content.map((pokemon, index) => (
+                <img
+                  key={index}
+                  src={`/images/${pokemon}`}
+                  alt={pokemon.replace(".png", "")}
+                  className={styles.pokemonImage}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.playingTile}>
+            <h2>{currentGamesTile.title}</h2>
+            <img
+              src={currentGamesTile.imageSrc}
+              alt="Current Games"
+              className={styles.mediaImage}
+            />
+          </div>
+
+          <div className={styles.readingTile}>
+            <h2>{currentBooksTile.title}</h2>
+            <img
+              src={currentBooksTile.imageSrc}
+              alt="Current Books"
+              className={styles.mediaImage}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

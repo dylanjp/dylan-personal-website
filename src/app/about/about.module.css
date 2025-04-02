@@ -1,80 +1,263 @@
-/* about.module.css */
+@font-face {
+  font-family: "TechMono";
+  src: url("/fonts/ShareTechMono-Regular.ttf") format("truetype");
+}
 
 .page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    color: #00ffff;
-    font-family: 'Orbitron', sans-serif;
-    text-align: center;
-  }
-  
-  .title {
-    font-size: 3rem;
-    text-shadow: 0 0 10px #00ffff;
-  }
-  
-  .text {
-    font-size: 1.5rem;
-  }
-  
-  .modalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
+  font-family: "TechMono";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  color: #00ffff;
+  text-align: center;
+  padding: 2rem;
+  padding-top: 100px;
+}
+
+.title {
+  font-size: 3rem;
+  text-shadow: 0 0 10px #00ffff;
+  margin-bottom: 2rem;
+}
+
+.tilesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1800px;
+}
+
+.tileColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 500px;
+}
+
+/* Profile Tile */
+.profileTile {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 3px solid #00ffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 15px #00ffff, 0 0 30px rgba(0, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.profileImage {
+  width: 100%;
+  height: auto;
+  border: 3px solid #00ffff;
+  box-shadow: 0 0 10px #00ffff;
+  margin-top: 15px;
+}
+
+/* About Me Tile */
+.aboutTile {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 3px solid #00ffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 15px #00ffff, 0 0 30px rgba(0, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.aboutTile h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #00ff9d;
+}
+
+.aboutTile p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #a0ffff;
+}
+
+/* Pokémon Tile Container */
+.pokemonTile {
+  /* Remove these properties */
+  /* border: 3px solid #00ffff; */
+  /* box-shadow: 0 0 15px #00ffff, 0 0 30px rgba(0, 255, 255, 0.5); */
+  background-color: transparent !important; /* Remove background */
+  padding: 0 !important; /* Remove padding */
+}
+
+/* Pokémon Grid */
+.pokemonGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  height: 100%; /* Fill container */
+  width: 100%; /* Fill container */
+  padding: 10px; /* Add spacing between images */
+}
+
+/* Individual Pokémon Images */
+.pokemonImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 3px solid #00ffff;
+  border-radius: 8px;
+  /* background: rgba(0, 0, 0, 0.9); */
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  aspect-ratio: 1/1; /* Keep square ratio */
+}
+
+.pokemonImage:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffff, 0 0 40px rgba(0, 255, 255, 0.7);
+  z-index: 1; /* Bring hovered image to front */
+}
+
+/* Step Counter Tile */
+.stepTile {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 3px solid #00ffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 15px #00ffff, 0 0 30px rgba(0, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.stepCounter {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #00ff9d;
+  text-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
+  margin: 20px 0;
+  animation: pulseGlow 1.5s infinite alternate;
+}
+
+.stepLabel {
+  display: block;
+  font-size: 1.1rem;
+  color: #00ffff;
+  text-transform: uppercase;
+}
+
+/* Smash Bros Tile */
+.smashTile {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 3px solid #ff3366;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(255, 51, 102, 0.5);
+  transition: all 0.3s ease;
+}
+
+.smashStats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.statItem {
+  background: rgba(255, 51, 102, 0.1);
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #ff3366;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #ff6699;
+}
+
+.statValue {
+  font-size: 1.4rem;
+  color: #ff3366;
+}
+
+.smashCharacters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.smashCharacter {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Media Tiles */
+.playingTile,
+.readingTile {
+  border: 3px solid #00ff88;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+  transition: all 0.3s ease;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mediaImage {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 2px auto 0;
+}
+
+/* Animations & Hover */
+@keyframes pulseGlow {
+  from { text-shadow: 0 0 10px rgba(0, 255, 157, 0.6); }
+  to { text-shadow: 0 0 20px rgba(0, 255, 157, 0.8); }
+}
+
+.profileTile:hover,
+.aboutTile:hover,
+/* .pokemonTile:hover, */
+.stepTile:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px #00ffff, 0 0 40px rgba(0, 255, 255, 0.7);
+}
+
+.smashTile:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px #ff3366, 0 0 40px rgba(255, 51, 102, 0.7);
+}
+
+.playingTile:hover,
+.readingTile:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px #00ff88, 0 0 40px rgba(0, 255, 136, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tileColumn {
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-  }
-  
-  .modal {
-    background: black;
-    border: 2px solid #00ffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #00ffff;
-    animation: fadeIn 0.5s ease-in-out;
     max-width: 400px;
-    text-align: center;
   }
-  
-  .modalTitle {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    text-shadow: 0 0 5px #00ffff;
+
+  .smashStats {
+    grid-template-columns: 1fr;
   }
-  
-  .modalText {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+
+  .pokemonGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .closeButton {
-    background: black;
-    border: 2px solid #00ffff;
-    color: #00ffff;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1rem;
-    text-transform: uppercase;
-    box-shadow: 0 0 10px #00ffff;
-    transition: all 0.3s;
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 1.5rem;
   }
-  
-  .closeButton:hover {
-    background: #00ffff;
-    color: black;
-    box-shadow: 0 0 20px #00ffff;
+
+  .pokemonGrid {
+    grid-template-columns: 1fr;
   }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  
+}
