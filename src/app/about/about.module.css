@@ -238,6 +238,7 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
   .tileColumn {
     width: 100%;
     max-width: 400px;
@@ -254,10 +255,35 @@
 
 @media (max-width: 480px) {
   .page {
-    padding: 1.5rem;
+    padding-top: 90px; /* Specific mobile padding */
+    padding: 1rem; /* Reduced from 1.5rem */
   }
 
+  /* Smaller Pokémon images */
   .pokemonGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 columns instead of 1 */
+    gap: 8px;
+    padding: 5px;
+  }
+
+  .pokemonImage {
+    max-width: 150px; /* Limit image size */
+    margin: 0 auto; /* Center images */
+  }
+
+  /* Adjust other elements for spacing */
+  .tileColumn {
+    gap: 1.5rem;
+  }
+  
+  .profileTile,
+  .aboutTile,
+  .stepTile {
+    padding: 15px;
+  }
+
+  /* Ensure navbar doesn't overlap */
+  .profileTile {
+    margin-top: 50px !important;
   }
 }
