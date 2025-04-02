@@ -27,7 +27,7 @@ export default function TestimonialSection() {
     resetTimeout();
     timeoutRef.current = setTimeout(() => {
       setCurrent((prev) => (prev + 1) % testimonials.length);
-    }, 10000);
+    }, 12000);
     return () => {
       resetTimeout();
     };

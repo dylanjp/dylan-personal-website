@@ -1,4 +1,10 @@
+@font-face {
+  font-family: "TechMono";
+  src: url("/fonts/ShareTechMono-Regular.ttf") format("truetype");
+}
+
 .modalOverlay {
+    font-family: "TechMono";
     position: fixed;
     top: 0;
     left: 0;
@@ -13,6 +19,7 @@
   }
   
   .modal {
+    font-family: "TechMono";
     background: black;
     border: 2px solid #00ffff;
     padding: 20px;
@@ -32,6 +39,7 @@
   }
   
   .modalTitle {
+    font-family: "TechMono";
     font-size: 2rem;
     color: #00ffff;
     margin-bottom: 10px;
@@ -39,6 +47,7 @@
   }
   
   .modalDescription {
+    font-family: "TechMono";
     font-size: 1.2rem;
     color: #00ffff;
     margin-bottom: 20px;
@@ -67,6 +76,7 @@
   }
   
   .closeButton {
+    font-family: "TechMono";
     background: black;
     border: 2px solid #00ffff;
     color: #00ffff;

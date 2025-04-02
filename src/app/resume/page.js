@@ -27,6 +27,9 @@ const techStack = [
   { name: "Unreal Engine", icon: "/unreal.svg" },
 ];
 
+
+//You can add the resume later
+
 export default function ResumePage() {
   return (
     <div className={styles.page}>
@@ -41,7 +44,7 @@ export default function ResumePage() {
         transition={{ duration: 1 }}
       >
         <h1 className={styles.title}>My Skills & Experience</h1>
-        <button className={styles.downloadButton}>Download Resume</button>
+        {/* <button className={styles.downloadButton}>Download Resume</button> */} 
       </motion.div>
       
 {/* Tech Tiles Section (Dynamic Grid) */}
