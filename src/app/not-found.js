@@ -26,7 +26,7 @@ export default function NotFound() {
       setShowModal(false);
       setTimeout(() => {
         router.push("/");
-      }, 500);
+      }, 10);
     };
   
     return (
