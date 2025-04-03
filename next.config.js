@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  // Add any additional configuration options here
+  images: {
+    unoptimized: true, // Required for static export
+  },
+  trailingSlash: true, // Ensures paths work correctly on GitHub Pages
+  assetPrefix: './', // Ensure assets load correctly
 };
 
 export default nextConfig;

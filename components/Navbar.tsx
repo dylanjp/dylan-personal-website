@@ -10,10 +10,10 @@ import styles from "./Navbar.module.css";
 export default function Navbar() {
   const pathname = usePathname();
   const pages = [
-    { name: "Projects", href: "/projects" },
-    { name: "Blog", href: "/blog" },
-    { name: "Resume", href: "/resume" },
-    { name: "About", href: "/about" },
+    { name: "Projects", href: "./projects/" },
+    { name: "Blog", href: "./blog/" },
+    { name: "Resume", href: "./resume/" },
+    { name: "About", href: "./about/" },
   ];
 
   const [menuOpen, setMenuOpen] = useState(false);
