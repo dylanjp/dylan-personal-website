@@ -15,10 +15,12 @@ export default function ProjectsPage() {
   return (
     <div className={styles.page}>
       {/* Static Background */}
-      <div className={styles.pageBackground}><Background/></div>
+      <div className={styles.pageBackground}><Background /></div>
 
+      {/* Navbar moved outside animated container */}
+      <Navbar />
+      
       <div className={styles.pageContent}>
-        <Navbar />
         <h1 className={styles.title}>Projects</h1>
 
         {projectsData.length > 0 ? (

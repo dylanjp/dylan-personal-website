@@ -25,6 +25,7 @@
 }
 
 .title {
+  padding-top: 100px;
   font-size: 3rem;
   text-shadow: 0 0 10px #00ffff;
 }
