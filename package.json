@@ -7,7 +7,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out",
     "dev": "next dev",
-    "build": "npx next build && npx next export",
+    "build": "npx next build",
     "start": "next start",
     "lint": "next lint"
   },
