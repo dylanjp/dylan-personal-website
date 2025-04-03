@@ -1,6 +1,6 @@
 # Dylan's Personal Website
 
-This is my personal website, built with [Next.js](https://nextjs.org), where I showcase my professional experience as a software engineer, document personal projects, and share insights through my blog.
+This is my personal website, built with [Next.js](https://nextjs.org), where I showcase my professional experience as a software engineer, document personal projects, and share insights through my blog. I also use this site to experiment with different web tech!
 
 ## 🛠 Getting Started
 
