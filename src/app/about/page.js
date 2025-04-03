@@ -20,6 +20,7 @@ export default function AboutPage() {
   const smashStatsTile = aboutPageData.find(tile => tile.id === "smash-stats");
   const currentGamesTile = aboutPageData.find(tile => tile.id === "current-games");
   const currentBooksTile = aboutPageData.find(tile => tile.id === "current-books");
+  const favoriteSoftwareTile = aboutPageData.find(tile => tile.id === "favorite-software");
 
   return (
     <div className={styles.page}>
@@ -45,7 +46,25 @@ export default function AboutPage() {
               <span className={styles.stepLabel}>STEPS TAKEN</span>
             </div>
           </div>
+
+          <div className={styles.stepTile}>
+            <h2>{favoriteSoftwareTile.title}</h2>
+            <div className={styles.stepCounter}>
+            <div className={styles.smashCharacters}>
+              {favoriteSoftwareTile.content.map((character, index) => (
+                <img
+                  key={index}
+                  src={`/${character.toLowerCase()}`}
+                  alt={character}
+                  className={styles.smashCharacter}
+                />
+              ))}
+            </div>
+            </div>
+          </div>
+
         </div>
+        
 
         {/* Middle Column */}
         <div className={styles.tileColumn}>

@@ -48,5 +48,17 @@ export const aboutPageData = [
         title: `WHAT I'M READING (${new Date().getFullYear()})`,
         type: "image",
         imageSrc: "/images/bookYear.png"
-    }
+    },
+    {
+        id: "favorite-software",
+        title: "FAVORITE SOFTWARE",
+        type: "icons",
+        content: [
+            "home-assistant.svg",
+            "unreal.svg",
+            "obsidian.svg",
+            "plex.svg",
+            "excel.svg"
+        ]
+    },
 ];
