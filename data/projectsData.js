@@ -28,6 +28,13 @@ const projects = [
       description: "????",
       link: ""
     },
+    {
+      id: 5,
+      title: "MapList UE5 Plugin",
+      image: "/images/unrealcpp.png",
+      description: "I created this Unreal Engine 5 plugin to list all maps in a project for quick navigation. It speeds up development by removing the need to manually search for levels, making workflow more efficient.",
+      link: "https://github.com/dylanjp/UE5-MapList-Plugin"
+    }
     // Add more project objects here
   ];
   
