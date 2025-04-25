@@ -23,14 +23,14 @@ export const aboutPageData = [
         id: "step-counter",
         title: "2025 STEP COUNTER:",
         type: "counter",
-        content: "869,746",
+        content: "1,148,738",
     },
     {
         id: "smash-stats",
         title: "SMASH BROS ULTIMATE STATS",
         type: "stats",
         content: {
-            gsp: "14,918,359",
+            gsp: "15,193,791",
             battles: "11,611",
             kos: "51,659",
             stage: "12/08/2018",
