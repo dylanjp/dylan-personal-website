@@ -17,6 +17,14 @@ const testimonials = [
     text: "Dylan has a unique approach to solving problems. He is also fun to work with and keeps good interpersonal relationships.",
     author: "Smith Mainoo (Software Engineer)",
   },
+  {
+    text: "He personally researched the development of web services on AWS and presented an excellent training on this topic to our organization.",
+    author: "Robert Thornton (Software Engineer)",
+  },
+    {
+    text: "Dylan was incredible to work with. I highly recommend Dylan's services to anyone who needs a quality product delivered efficiently and professionally.",
+    author: "Dalton Smith (Client)",
+  },
 ];
 
 export default function TestimonialSection() {
