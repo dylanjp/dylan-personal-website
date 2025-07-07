@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { createBleep } from "@arwes/bleeps";
 import { FaLinkedin, FaGithub, FaItchIo, FaBars, FaTimes } from "react-icons/fa";
+import VersionModal from "@/components/VersionModal";
+import versionData from "@/data/versionData";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
@@ -17,6 +19,7 @@ export default function Navbar() {
   ];
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showVersionModal, setShowVersionModal] = useState(false);
 
   useEffect(() => {
     const bleep = createBleep({
@@ -37,6 +40,7 @@ export default function Navbar() {
   }, []);
 
   return (
+    <>
     <nav className={styles.navbar}>
       {/* Left side - Retro Home Icon */}
       <Link href="/" className={styles.retroIcon}>
@@ -69,12 +73,24 @@ export default function Navbar() {
         <a href="https://legendaryepics.itch.io/" target="_blank" className={styles.icon}>
           <FaItchIo />
         </a>
-        <span className={styles.version}>v1.0.0</span>
+        <span
+          className={styles.version}
+          onClick={() => setShowVersionModal(true)}
+          style={{ cursor: "pointer" }}
+        >
+          {versionData[0]?.version || "v?.?.?"}
+        </span>
       </div>
 
       {/* Mobile Controls: Version & Hamburger Icon */}
       <div className={styles.mobileControls}>
-        <span className={styles.version}>v1.0.0</span>
+        <span
+          className={styles.version}
+          onClick={() => setShowVersionModal(true)}
+          style={{ cursor: "pointer" }}
+        >
+          {versionData[0]?.version || "v?.?.?"}
+        </span>
         <div className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FaTimes /> : <FaBars />}
         </div>
@@ -108,5 +124,7 @@ export default function Navbar() {
         </div>
       )}
     </nav>
+    {showVersionModal && <VersionModal onClose={() => setShowVersionModal(false)} />}
+    </>
   );
 }
