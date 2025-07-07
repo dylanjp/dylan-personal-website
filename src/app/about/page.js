@@ -1,10 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Background from "@/components/Background";
 import Navbar from "@/components/Navbar";
-import { createBleep } from "@arwes/bleeps";
 import { aboutPageData } from "@/data/aboutPageData";
 import styles from "./about.module.css";
 

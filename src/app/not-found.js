@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Background from "@/components/Background";
 import Navbar from "@/components/Navbar";
-import { createBleep } from "@arwes/bleeps";
 import { useRouter } from "next/navigation";
 import styles from "./not-found.module.css";
 
@@ -17,12 +16,8 @@ export default function NotFound() {
       setShowModal(true);
     }, []);
     
-    const bleep = createBleep({
-      sources: [{ src: "/sounds/click.mp3", type: "audio/mpeg" }],
-    });
     
     const handleClose = () => {
-      bleep?.play();
       setShowModal(false);
       setTimeout(() => {
         router.push("/");

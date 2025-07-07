@@ -4,25 +4,10 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import Background from "@/components/Background";
 import Navbar from "@/components/Navbar";
-import { createBleep } from "@arwes/bleeps";
 import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
-    const bleep = createBleep({
-      sources: [{ src: "/sounds/click.mp3", type: "audio/mpeg" }],
-    });
-
-    const handleClick = () => {
-      bleep?.play();
-    };
-
-    const links = document.querySelectorAll("a");
-    links.forEach((link) => link.addEventListener("click", handleClick));
-
-    return () => {
-      links.forEach((link) => link.removeEventListener("click", handleClick));
-    };
   }, []);
 
   return (

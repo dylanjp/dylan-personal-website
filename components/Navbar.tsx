@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { createBleep } from "@arwes/bleeps";
 import { FaLinkedin, FaGithub, FaItchIo, FaBars, FaTimes } from "react-icons/fa";
 import VersionModal from "@/components/VersionModal";
 import versionData from "@/data/versionData";
@@ -21,23 +20,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showVersionModal, setShowVersionModal] = useState(false);
 
-  useEffect(() => {
-    const bleep = createBleep({
-      sources: [{ src: "/sounds/click.mp3", type: "audio/mpeg" }],
-    });
-
-    const handleClick = () => {
-      bleep?.play();
-    };
-
-    // Attach event listener to all anchor elements
-    const clickableElements = document.querySelectorAll("a");
-    clickableElements.forEach((el) => el.addEventListener("click", handleClick));
-
-    return () => {
-      clickableElements.forEach((el) => el.removeEventListener("click", handleClick));
-    };
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <>

@@ -1,23 +1,16 @@
 // components/ProjectModal.js
 "use client";
-import { createBleep } from "@arwes/bleeps";
 import { useEffect } from "react";
 import styles from "./ProjectModal.module.css";
 
 export default function ProjectModal({ project, onClose }) {
-  const bleep = createBleep({
-    sources: [{ src: "/sounds/click.mp3", type: "audio/mpeg" }],
-  });
 
   const handleClose = () => {
-    bleep?.play();
     onClose();
   };
 
   // Optionally play a sound on modal open
-  useEffect(() => {
-    bleep?.play();
-  }, [bleep]);
+  useEffect(() => {}, []);
 
   return (
     <div className={styles.modalOverlay}>
