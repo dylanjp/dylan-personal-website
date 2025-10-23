@@ -1,6 +1,14 @@
 // versionData.js
 
 const versionData = [
+    {
+    version: "v1.0.2",
+    releaseDate: "2025-10-23",
+    notes: [
+      "Consolidated some elements",
+      "Fixed some font styling",
+    ],
+  },
   {
     version: "v1.0.1",
     releaseDate: "2025-07-07",
