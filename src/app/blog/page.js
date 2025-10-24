@@ -62,8 +62,8 @@ export default function BlogPage() {
             ...filteredBlogs,
           ]
             .sort((a, b) => new Date(b.date ?? b.id) - new Date(a.date ?? a.id))
-            .map((b) => (
-              <BlogTile key={b.id ?? b.title} blog={b} />
+            .map((b, i) => (
+              <BlogTile key={b.id ?? b.title} blog={b} index={i} />
             ))}
         </div>
       </section>

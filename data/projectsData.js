@@ -18,7 +18,7 @@ const projects = [
       id: 3,
       title: "Music Library App",
       image: "/images/musicLib.png",
-      description: "This is a public-facing web application I built professionally while working at The Church of Jesus Christ of Latter-day Saints. It features a React frontend with a Node.js middleware layer that interacts with multiple AWS Lambda functions. Deployed on AWS, it leverages services like CloudFront, API Gateway, and S3 for scalability and performance.",
+      description: "This is a public-facing web application I built for The Church of Jesus Christ of Latter-day Saints.It features a React frontend with a Node.js middleware layer that interfaces with multiple AWS Lambda functions. Deployed on AWS, it leverages services such as CloudFront, API Gateway, and S3 for scalability and high performance.",
       link: "https://www.churchofjesuschrist.org/media/music?lang=eng"
     },
     {
@@ -32,7 +32,7 @@ const projects = [
       id: 5,
       title: "MapList UE5 Plugin",
       image: "/images/unrealcpp.png",
-      description: "I created this Unreal Engine 5 plugin to list all maps in a project for quick navigation. It speeds up development by removing the need to manually search for levels, making workflow more efficient.",
+      description: "An Unreal Engine 5 plugin I created to list all maps in a project for quick navigation. It speeds up development by removing the need to manually search for levels, making workflow more efficient.",
       link: "https://github.com/dylanjp/UE5-MapList-Plugin"
     }
     // Add more project objects here

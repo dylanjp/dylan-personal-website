@@ -14,6 +14,29 @@
 	min-height: 160px;
 	transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 	cursor: pointer; /* show pointer on hover */
+	position: relative; /* for pseudo-element glow */
+	overflow: visible; /* allow glow to extend outside */
+}
+
+/* load-time tron-like glow (runs once per tile, staggered via --anim-delay) */
+@keyframes tronGlow {
+	0% {
+		box-shadow: 0 2px 8px rgba(0,200,255,0.02), inset 0 0 10px rgba(0,200,255,0.01);
+		border-color: rgba(0,200,255,0.10);
+	}
+	45% {
+		box-shadow: 0 30px 90px rgba(0,200,255,0.18), inset 0 0 120px rgba(0,200,255,0.12);
+		border-color: rgba(0,200,255,0.7);
+	}
+	100% {
+		box-shadow: 0 6px 30px rgba(0,200,255,0.04), inset 0 0 40px rgba(0,200,255,0.02);
+		border-color: rgba(0,200,255,0.12);
+	}
+}
+
+.tile {
+	/* run glow animation once on mount; delay is set per-tile via --anim-delay */
+	animation: tronGlow 900ms cubic-bezier(.2,.9,.3,1) var(--anim-delay, 0ms) both;
 }
 
 .imageWrap {
@@ -117,6 +140,27 @@
 .tile:focus {
   outline: 2px solid rgba(0,200,255,0.14);
   outline-offset: 4px;
+}
+
+/* strong neon border glow using a pseudo-element so it doesn't conflict with inline box-shadow */
+.tile::before {
+	content: "";
+	position: absolute;
+	inset: -10px;
+	border-radius: 16px;
+	pointer-events: none;
+	opacity: 0;
+	transform: scale(0.98);
+	transition: opacity 220ms ease, transform 220ms cubic-bezier(.2,.9,.3,1);
+	background: radial-gradient(closest-side, rgba(0,200,255,0.28), rgba(0,200,255,0.08) 40%, transparent 60%);
+	filter: blur(10px);
+	mix-blend-mode: screen;
+}
+
+.tile:hover::before,
+.tile:focus::before {
+	opacity: 1;
+	transform: scale(1);
 }
 
 /* responsive: stack vertically on small screens */
