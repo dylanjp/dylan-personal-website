@@ -1,80 +1,130 @@
 /* blog.module.css */
 
+@font-face {
+  font-family: "TechMono";
+  src: url("/fonts/ShareTechMono-Regular.ttf") format("truetype");
+}
+
 .page {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: flex-start; /* move content toward the top */
+    padding-top: 8vh; /* healthy spacing from the top of the viewport */
+    min-height: 100vh;
     color: #00ffff;
-    font-family: 'Orbitron', sans-serif;
+    font-family: "TechMono";
     text-align: center;
   }
   
   .title {
     font-size: 3rem;
     text-shadow: 0 0 10px #00ffff;
+    margin-bottom: 24px; /* space between h1 and the CTA links */
   }
   
   .text {
     font-size: 1.5rem;
   }
   
-  .modalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-  }
-  
-  .modal {
-    background: black;
-    border: 2px solid #00ffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #00ffff;
-    animation: fadeIn 0.5s ease-in-out;
-    max-width: 400px;
-    text-align: center;
-  }
-  
-  .modalTitle {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    text-shadow: 0 0 5px #00ffff;
-  }
-  
-  .modalText {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .closeButton {
-    background: black;
-    border: 2px solid #00ffff;
-    color: #00ffff;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1rem;
-    text-transform: uppercase;
-    box-shadow: 0 0 10px #00ffff;
-    transition: all 0.3s;
-  }
-  
-  .closeButton:hover {
-    background: #00ffff;
-    color: black;
-    box-shadow: 0 0 20px #00ffff;
-  }
+  .ctas {
+  font-family: "TechMono";
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+    margin-top: 8px; /* removed negative lift and added modest top gap */
+}
+
+.ctas div {
+  appearance: none;
+  border-radius: 128px;
+  height: 48px;
+  padding: 0 20px;
+  border: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.navLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  font-size: 18px;
+  color: #FF00FF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navLink::before {
+  margin-right: 8px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #FF00FF;
+  border-bottom: 2px solid #FF00FF;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.navLink:hover {
+  color: rgb(255, 247, 5);
+}
+
+.navLink:hover::after {
+  width: 50%;
+  height: 50%;
+}
+
+.navLink:hover::before {
+  transform: rotate(360deg);
+}
+
+/* visual active state when a category is selected */
+.navActive {
+  background: rgba(255, 0, 255, 0.06);
+  color: rgb(255, 247, 5);
+  border: 1px solid rgba(255, 0, 255, 0.18);
+}
   
   @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
   }
+
+/* layout for blog tiles grid */
+.list {
+  width: 100%;
+  max-width: 1200px;
+  margin: 36px auto 80px;
+  padding: 0 20px;
+}
+
+.grid {
+  display: grid;
+  /* force a single column so each BlogTile is a full-width row */
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* Hide CTA links on very small screens to avoid layout issues */
+@media (max-width: 650px) {
+  .ctas {
+    display: none;
+  }
+}
   

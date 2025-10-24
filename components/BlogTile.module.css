@@ -1,0 +1,143 @@
+
+/* BlogTile.module.css - neon / TRON-like card */
+.tile {
+	display: flex;
+	gap: 20px;
+	/* reduce bottom padding so bottomRow sits closer to the tile edge */
+	padding: 20px 20px 10px;
+	border-radius: 12px;
+	background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.35));
+	/* bluish glowing border to match app theme */
+	border: 2px solid rgba(0,200,255,0.12);
+	box-shadow: 0 6px 30px rgba(0,200,255,0.04), inset 0 0 40px rgba(0,200,255,0.02);
+	align-items: center;
+	min-height: 160px;
+	transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+	cursor: pointer; /* show pointer on hover */
+}
+
+.imageWrap {
+	flex: 0 0 260px;
+	max-width: 260px;
+	padding: 10px;
+	border-radius: 10px;
+	background: linear-gradient(180deg, rgba(0,20,30,0.6), rgba(0,0,0,0.6));
+	border: 2px solid rgba(0,255,255,0.12);
+	box-shadow: 0 0 24px rgba(0,255,255,0.06);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.image {
+	width: 100%;
+	height: 140px;
+	object-fit: cover;
+	border-radius: 6px;
+	display: block;
+}
+
+.imagePlaceholder {
+	color: #00ffff;
+	opacity: 0.6;
+}
+
+.content {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	/* ensure content uses full height inside tile */
+	height: 100%;
+}
+
+.title {
+	margin: 0 0 8px 0;
+	color: #00f5ff;
+	font-size: 1.4rem;
+	line-height: 1.15;
+	text-shadow: 0 0 10px rgba(0,245,255,0.14);
+}
+
+.desc {
+	/* slightly larger description and vertically centered in the content area */
+	margin: 0;
+	color: #da2cf2;
+	opacity: 0.95;
+	font-size: 1.05rem;
+	/* let the description take the remaining vertical space and center its text */
+	flex: 1 1 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center; /* center horizontally */
+	text-align: center; /* ensure multi-line text is centered */
+	/* give a small gap from title and bottomRow when space allows */
+	padding: 4px 0;
+}
+
+.bottomRow {
+	margin-top: auto; /* push to bottom */
+	margin-bottom: 0; /* sit flush with tile bottom padding */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px;
+}
+
+.date {
+	color: #00c9ff;
+	font-size: 0.95rem;
+}
+
+.tags {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.tag {
+	border: 1px solid rgba(255,0,255,0.12);
+	color: #ff00ff;
+	padding: 4px 10px;
+	border-radius: 999px;
+	font-size: 0.85rem;
+	background: rgba(255,0,255,0.02);
+	text-shadow: 0 0 6px rgba(255,0,255,0.05);
+}
+
+/* hover / focus styles to intensify blue glow */
+.tile:hover,
+.tile:focus {
+  transform: translateY(-6px);
+  border-color: rgba(0,200,255,0.6);
+  box-shadow: 0 18px 60px rgba(0,200,255,0.12), inset 0 0 60px rgba(0,200,255,0.06);
+}
+
+.tile:focus {
+  outline: 2px solid rgba(0,200,255,0.14);
+  outline-offset: 4px;
+}
+
+/* responsive: stack vertically on small screens */
+@media (max-width: 680px) {
+	.tile {
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.imageWrap {
+		width: 100%;
+		max-width: 100%;
+		padding: 8px;
+	}
+
+	.image {
+		height: 200px;
+	}
+
+	.bottomRow {
+		width: 100%;
+		flex-direction: row;
+	}
+}
