@@ -1,8 +1,7 @@
-// components/BlogAnimator.js
 "use client";
 
 import { useEffect, useRef } from "react";
-import styles from "./blogPost.module.css"; // Make sure this path is correct
+import styles from "./blogPost.module.css";
 
 export default function BlogAnimator({ htmlContent }) {
     const articleRef = useRef(null);
@@ -75,7 +74,7 @@ export default function BlogAnimator({ htmlContent }) {
                 root.classList.remove(decipheringClass);
                 root.classList.add(decodedClass);
             }, 2200 + textNodes.length * 20);
-            timers.push(finalTimeout); // Store final timeout for cleanup
+            timers.push(finalTimeout);
         }, 50); // Original 50ms delay
 
         timers.push(startTimeout);

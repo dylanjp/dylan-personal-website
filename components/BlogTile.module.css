@@ -1,21 +1,18 @@
 
-/* BlogTile.module.css - neon / TRON-like card */
 .tile {
 	display: flex;
 	gap: 20px;
-	/* reduce bottom padding so bottomRow sits closer to the tile edge */
 	padding: 20px 20px 10px;
 	border-radius: 12px;
 	background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.35));
-	/* bluish glowing border to match app theme */
 	border: 2px solid rgba(0,200,255,0.12);
 	box-shadow: 0 6px 30px rgba(0,200,255,0.04), inset 0 0 40px rgba(0,200,255,0.02);
 	align-items: center;
 	min-height: 160px;
 	transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
-	cursor: pointer; /* show pointer on hover */
-	position: relative; /* for pseudo-element glow */
-	overflow: visible; /* allow glow to extend outside */
+	cursor: pointer; 
+	position: relative; 
+	overflow: visible; 
 }
 
 /* load-time tron-like glow (runs once per tile, staggered via --anim-delay) */
@@ -70,7 +67,6 @@
 	display: flex;
 	flex-direction: column;
 	min-width: 0;
-	/* ensure content uses full height inside tile */
 	height: 100%;
 }
 
@@ -83,24 +79,21 @@
 }
 
 .desc {
-	/* slightly larger description and vertically centered in the content area */
 	margin: 0;
 	color: #da2cf2;
 	opacity: 0.95;
 	font-size: 1.05rem;
-	/* let the description take the remaining vertical space and center its text */
 	flex: 1 1 auto;
 	display: flex;
 	align-items: center;
-	justify-content: center; /* center horizontally */
-	text-align: center; /* ensure multi-line text is centered */
-	/* give a small gap from title and bottomRow when space allows */
+	justify-content: center; 
+	text-align: center; 
 	padding: 4px 0;
 }
 
 .bottomRow {
-	margin-top: auto; /* push to bottom */
-	margin-bottom: 0; /* sit flush with tile bottom padding */
+	margin-top: auto; 
+	margin-bottom: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -142,7 +135,6 @@
   outline-offset: 4px;
 }
 
-/* strong neon border glow using a pseudo-element so it doesn't conflict with inline box-shadow */
 .tile::before {
 	content: "";
 	position: absolute;

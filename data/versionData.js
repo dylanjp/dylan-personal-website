@@ -10,6 +10,7 @@ const versionData = [
       "Added BlogAnimator and other blog-related features",
       "Consolidated some elements",
       "Fixed some font styling",
+      "Standardized Button Component"
     ],
   },
   {
