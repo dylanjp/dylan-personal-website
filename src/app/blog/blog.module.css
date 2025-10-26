@@ -121,6 +121,31 @@
   gap: 20px;
 }
 
+.blog-content {
+  font-family: system-ui, sans-serif;
+  line-height: 1.7;
+  white-space: pre-wrap; /* 👈 preserve multiple newlines */
+}
+
+.blog-content p {
+  margin-bottom: 1em;
+}
+
+.blog-content a {
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.blog-content a:hover {
+  text-decoration: underline;
+}
+
+.blog-content img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
 /* Hide CTA links on very small screens to avoid layout issues */
 @media (max-width: 650px) {
   .ctas {

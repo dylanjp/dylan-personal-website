@@ -5,7 +5,8 @@ const blogs = [
       title: "Building this Website / Blog",
       image: "/blogimages/websit-blog.png",
       description: "How I built and deployed this website and how you are reading this blog post.",
-      blogLocation: "",
+      blogLocation: "/blogs/building-this-website-blog.md",
+      slug: "building-this-website-blog",
       tags: ["Technology / Software"]
     },
     {
@@ -13,7 +14,8 @@ const blogs = [
       title: "Unreal Engine: You want to use blueprint.... trust me",
       image: "/blogimages/blog-blueprint.png",
       description: "How I built a third person lock-on system for Project SwordBreak",
-      blogLocation: "",
+      blogLocation: "/blogs/building-this-website-blog.md",
+      slug: "building-this-website-blog",
       tags: ["Game Development"]
     },
     {
@@ -21,7 +23,8 @@ const blogs = [
       title: "Monster Hunter Wilds: A Fantastic Co-Op Adventure",
       image: "/blogimages/mhw-review.png",
       description: "How I built a third person lock-on system for Project SwordBreak",
-      blogLocation: "",
+      blogLocation: "/blogs/building-this-website-blog.md",
+      slug: "building-this-website-blog",
       tags: ["Reviews"]
     },
     {
@@ -29,7 +32,8 @@ const blogs = [
       title: "2024 Retrospective",
       image: "/images/unrealcpp.png",
       description: "My reflections and key learnings from the year 2024.",
-      blogLocation: "",
+      blogLocation: "/blogs/building-this-website-blog.md",
+      slug: "building-this-website-blog",
       tags: ["Personal"]
     }
     // Add more blogs here
