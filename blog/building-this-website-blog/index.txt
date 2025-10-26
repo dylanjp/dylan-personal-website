@@ -1,0 +1,39 @@
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+4:I[2613,["711","static/chunks/8e1d74a4-b5ef5e9e638c19d2.js","975","static/chunks/975-9dd218042cffaabc.js","345","static/chunks/app/not-found-fadf14fc164c8433.js"],"default"]
+6:I[9665,[],"OutletBoundary"]
+9:I[9665,[],"ViewportBoundary"]
+b:I[9665,[],"MetadataBoundary"]
+d:I[6614,[],""]
+:HL["https://dylanjohnpratt.com/_next/static/css/f5d5290855775ffb.css","style"]
+:HL["https://dylanjohnpratt.com/_next/static/css/2341c2214d2b22cb.css","style"]
+:HL["https://dylanjohnpratt.com/_next/static/css/bac98054698614ca.css","style"]
+0:{"P":null,"b":"z6yfwYvnwwnymxogd7cRR","p":"https://dylanjohnpratt.com","c":["","blog","building-this-website-blog",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","building-this-website-blog","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"https://dylanjohnpratt.com/_next/static/css/f5d5290855775ffb.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__variable_e773a9 __variable_a622d0","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L4",null,{}],[["$","link","0",{"rel":"stylesheet","href":"https://dylanjohnpratt.com/_next/static/css/bac98054698614ca.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","building-this-website-blog","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5","$undefined",[["$","link","0",{"rel":"stylesheet","href":"https://dylanjohnpratt.com/_next/static/css/2341c2214d2b22cb.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"https://dylanjohnpratt.com/_next/static/css/bac98054698614ca.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$L6",null,{"children":["$L7","$L8",null]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","u7hanBn7Rl7nG0oIa6CoH",{"children":[["$","$L9",null,{"children":"$La"}],null]}],["$","$Lb",null,{"children":"$Lc"}]]}],false]],"m":"$undefined","G":["$d","$undefined"],"s":false,"S":true}
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+8:null
+c:[["$","title","0",{"children":"Dylan John Pratt"}],["$","meta","1",{"name":"description","content":"Dylan's Personal Website"}],["$","link","2",{"rel":"icon","href":"/favicon.ico"}]]
+e:I[6740,["711","static/chunks/8e1d74a4-b5ef5e9e638c19d2.js","975","static/chunks/975-9dd218042cffaabc.js","953","static/chunks/app/blog/%5Bslug%5D/page-ee78cb8ba0e0efe0.js"],"default"]
+f:I[4091,["711","static/chunks/8e1d74a4-b5ef5e9e638c19d2.js","975","static/chunks/975-9dd218042cffaabc.js","953","static/chunks/app/blog/%5Bslug%5D/page-ee78cb8ba0e0efe0.js"],"default"]
+10:I[7916,["711","static/chunks/8e1d74a4-b5ef5e9e638c19d2.js","975","static/chunks/975-9dd218042cffaabc.js","953","static/chunks/app/blog/%5Bslug%5D/page-ee78cb8ba0e0efe0.js"],"default"]
+11:T464,<h1>Building This Website / Blog</h1>
+<p>This website is built using <strong>Next.js</strong>, hosted on <strong>GitHub Pages</strong>, and styled with <strong>CSS modules</strong>.</p>
+<hr>
+<h2>Image Example</h2>
+<p><img src="/blogimages/websit-blog.png" alt="Website Screenshot"></p>
+<hr>
+<h2>YouTube Embed</h2>
+<p>You can embed a YouTube video like this (simple HTML works in Markdown):</p>
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+title="YouTube video player"
+frameborder="0"
+allowfullscreen></iframe>
+
+<hr>
+<h2>Closing Thoughts</h2>
+<p>Markdown makes blogging easy, and Next.js turns it into a fast, modern web experience.<br>The Seven Atrocities are the 7 most powerful servants of the Dark Lord. They are normally cursed beings originating from the mortal world. Each one has a specific symbol branded onto them that corresponds with which atrocity they are. There have been several different characters that have held each position at different times in history.</p>
+<p><strong>List of Atrocities</strong></p>
+<p> <a href="/blog/2024-retrospective">2024-retrospective</a></p>
+5:["$","div",null,{"className":"$undefined","children":[["$","$Le",null,{}],["$","$Lf",null,{}],["$","main",null,{"className":"blogPost_blogMain__8kfpf","children":["$","$L10",null,{"htmlContent":"$11"}]}]]}]
