@@ -2,6 +2,18 @@
 
 const versionData = [
   {
+    version: "v1.0.2",
+    releaseDate: "2025-10-26",
+    notes: [
+      "MAJOR UPDATE: Blog section added",
+      "BLOG(s) Added: 2024 Retrospective",
+      "Added BlogAnimator and other blog-related features",
+      "Consolidated some elements",
+      "Fixed some font styling",
+      "Standardized Button Component"
+    ],
+  },
+  {
     version: "v1.0.1",
     releaseDate: "2025-07-07",
     notes: [

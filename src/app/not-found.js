@@ -5,6 +5,7 @@ import Background from "@/components/Background";
 import Navbar from "@/components/Navbar";
 import { useRouter } from "next/navigation";
 import styles from "./not-found.module.css";
+import PrimaryButton from "@/components/PrimaryButton";
 
 
 // app/not-found.js
@@ -32,7 +33,9 @@ export default function NotFound() {
           <div className={styles.modalOverlay}>
             <div className={styles.modal}>
               <h2 className={styles.modalTitle}>Looks like you got lost....</h2>
-              <button className={styles.closeButton} onClick={handleClose}>Click Here for Homepage</button>
+              <PrimaryButton onClick={handleClose} className={styles.closeButton}>
+                Click Here for Homepage
+              </PrimaryButton>
             </div>
           </div>
         )}

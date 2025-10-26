@@ -2,6 +2,7 @@
 "use client";
 import { useEffect } from "react";
 import styles from "./ProjectModal.module.css";
+import PrimaryButton from "./PrimaryButton";
 
 export default function ProjectModal({ project, onClose }) {
 
@@ -31,9 +32,9 @@ export default function ProjectModal({ project, onClose }) {
           ) : (
             <div className={styles.comingSoonBanner}>More Info Coming Soon</div>
           )}
-          <button className={styles.closeButton} onClick={handleClose}>
+          <PrimaryButton onClick={handleClose} className={styles.closeButton}>
             Close
-          </button>
+          </PrimaryButton>
         </div>
       </div>
     </div>
