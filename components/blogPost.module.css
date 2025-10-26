@@ -14,15 +14,10 @@
   opacity: 1;
 }
 
-/* small glow so text pops while decoding */
-.deciphering {
-  text-shadow: 0 0 6px #00ffff, 0 0 12px #00ffff;
-  /* you can animate more properties if you like */
-}
-
-/* optional final state */
+/* remove glowing text completely */
+.deciphering,
 .decoded {
-  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  text-shadow: none;
 }
 
 /* existing styles (kept from your original file) */

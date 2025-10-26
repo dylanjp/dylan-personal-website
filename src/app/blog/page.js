@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation"; // ✅ added import
+import { useRouter } from "next/navigation";
 import Background from "@/components/Background";
 import Navbar from "@/components/Navbar";
 import styles from "./blog.module.css";
@@ -11,7 +11,7 @@ import blogs from "@/data/blogData";
 
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const router = useRouter(); // ✅ added
+  const router = useRouter();
 
   const categories = useMemo(
     () => [
@@ -73,7 +73,7 @@ export default function BlogPage() {
                 key={b.id ?? b.title}
                 blog={b}
                 index={i}
-                onClick={() => router.push(`/blog/${b.id}`)} // ✅ added click handler
+                onClick={() => router.push(`/blog/${b.id}`)}
               />
             ))}
         </div>

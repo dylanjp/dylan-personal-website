@@ -1,9 +1,11 @@
-import { promises as fs } from "fs"; // <-- FIX: Use fs/promises
+import { promises as fs } from "fs";
 import path from "path";
 import { marked } from "marked";
 import Navbar from "@/components/Navbar";
 import Background from "@/components/Background";
 import styles from "./blogPost.module.css";
+import BlogAnimator from "@/components/BlogAnimator";
+import { notFound } from "next/navigation";
 
 const postsDir = path.join(process.cwd(), "public", "blogs");
 
@@ -45,52 +47,46 @@ function escapeHtml(str) {
 }
 
 // Force static so dynamic params work
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 
-// Server Component
+// SERVER COMPONENT - reads markdown and renders HTML
 export default async function BlogPostPage({ params }) {
     const { slug } = await params;
     const filePath = path.join(postsDir, `${slug}.md`);
 
     let content;
     try {
-        // FIX: Use async readFile and a try...catch block
         content = await fs.readFile(filePath, "utf8");
     } catch (error) {
-        // This will catch errors like "file not found"
-        return <h1 style={{ padding: "2rem" }}>404 - Post Not Found</h1>;
+        // File doesn't exist → trigger app router not-found page
+        notFound();
     }
 
     const htmlContent = marked.parse(content);
     const finalHtml = convertObsidianLinks(htmlContent);
+
+    // 2. We no longer need the class name variables here
 
     return (
         <div className={styles.pageWrapper}>
             <Navbar />
             <Background />
             <main className={styles.blogMain}>
-                <article
-                    className={styles.blogContent}
-                    dangerouslySetInnerHTML={{ __html: finalHtml }}
-                />
+                {/* 3. Use the BlogAnimator and pass the HTML to it */}
+                <BlogAnimator htmlContent={finalHtml} />
             </main>
+
+            {/* 4. The <script> tag is gone! */}
         </div>
     );
 }
-
-// Pre-build static paths
 export async function generateStaticParams() {
-    try {
-        // FIX: Use async readdir and a try...catch block
-        const filenames = await fs.readdir(postsDir);
-        return filenames
-            .filter((file) => file.endsWith(".md"))
-            .map((file) => ({
-                slug: file.replace(/\.md$/, ""),
-            }));
-    } catch (error) {
-        // If the directory doesn't exist, return empty array
-        console.warn("Could not read blogs directory for generateStaticParams:", error.message);
-        return [];
-    }
+  try {
+    const filenames = await fs.readdir(postsDir);
+    return filenames
+      .filter(file => file.endsWith(".md"))
+      .map(file => ({ slug: file.replace(/\.md$/, "") }));
+  } catch {
+    return [];
+  }
 }
