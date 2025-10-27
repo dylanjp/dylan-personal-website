@@ -165,24 +165,46 @@
 }
 
 /* responsive: stack vertically on small screens */
-@media (max-width: 680px) {
+/* responsive: stack vertically on small screens */
+@media (max-width: 780px) {
 	.tile {
 		flex-direction: column;
-		gap: 12px;
+		align-items: stretch;
+		gap: 14px;
+		min-height: auto;
+	}
+
+	.fullLink {
+		flex-direction: column;
+		align-items: stretch;
 	}
 
 	.imageWrap {
+		flex: 0 0 auto;
 		width: 100%;
 		max-width: 100%;
 		padding: 8px;
 	}
 
 	.image {
-		height: 200px;
+		width: 100%;
+		height: auto;
+		max-height: 240px;
+		object-fit: cover;
+		border-radius: 8px;
+	}
+
+	.content {
+		width: 100%;
+		text-align: center;
+		padding: 0 6px 10px;
 	}
 
 	.bottomRow {
 		width: 100%;
-		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 10px;
+		margin-top: 10px;
 	}
 }
