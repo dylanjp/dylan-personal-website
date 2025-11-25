@@ -23,7 +23,7 @@ export const aboutPageData = [
         id: "step-counter",
         title: "2025 STEP COUNTER:",
         type: "counter",
-        content: "2,788,485",
+        content: "3,155,456",
     },
     {
         id: "smash-stats",
