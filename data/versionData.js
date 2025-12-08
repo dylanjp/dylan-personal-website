@@ -2,6 +2,13 @@
 
 const versionData = [
   {
+    version: "v1.0.3",
+    releaseDate: "2025-12-07",
+    notes: [
+      "BLOG(s) Added: UNREAL ENGINE: You want to use blueprints.... trust me",
+    ],
+  },
+  {
     version: "v1.0.2",
     releaseDate: "2025-10-26",
     notes: [
