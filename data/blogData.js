@@ -11,15 +11,6 @@ const blogs = [
     // },
     // {
     //   date: "2025-10-23",
-    //   title: "Unreal Engine: You want to use blueprint.... trust me",
-    //   image: "/blogimages/blog-blueprint.png",
-    //   description: "How I built a third person lock-on system for Project SwordBreak",
-    //   blogLocation: "/blogs/unreal-engine-blueprint.md",
-    //   slug: "unreal-engine-blueprint",
-    //   tags: ["Game Development"]
-    // },
-    // {
-    //   date: "2025-10-23",
     //   title: "Monster Hunter Wilds: A Fantastic Co-Op Adventure",
     //   image: "/blogimages/mhw-review.png",
     //   description: "How I built a third person lock-on system for Project SwordBreak",
@@ -35,6 +26,15 @@ const blogs = [
       blogLocation: "/blogs/2024-retrospective.md",
       slug: "2024-retrospective",
       tags: ["Personal"]
+    },
+    {
+      date: "2024-1-30",
+      title: "UNREAL ENGINE: You want to use blueprints.... trust me",
+      image: "/blogimages/ue-vid.png",
+      description: "Video of my presentation where I walk through the fundamentals of Unreal Engine with a focus on Blueprints.",
+      blogLocation: "/blogs/2024-unrealengine-video.md",
+      slug: "2024-unrealengine-video",
+      tags: ["Game Development"]
     }
     // Add more blogs here
   ];

@@ -122,11 +122,24 @@ export default function AboutPage() {
 
           <div className={styles.playingTile}>
             <h2>{currentGamesTile.title}</h2>
-            <img
-              src={currentGamesTile.imageSrc}
-              alt="Current Games"
-              className={styles.mediaImage}
-            />
+            {currentGamesTile.type === "game-grid" ? (
+              <div className={styles.gameGrid}>
+                {currentGamesTile.images.map((imageSrc, index) => (
+                  <img
+                    key={index}
+                    src={imageSrc}
+                    alt={`Game ${index + 1}`}
+                    className={styles.gameImage}
+                  />
+                ))}
+              </div>
+            ) : (
+              <img
+                src={currentGamesTile.imageSrc}
+                alt="Current Games"
+                className={styles.mediaImage}
+              />
+            )}
           </div>
 
           <div className={styles.readingTile}>
