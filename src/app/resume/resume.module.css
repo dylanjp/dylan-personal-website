@@ -16,7 +16,7 @@
   color: #00ffff;
   font-family: "TechMono";
   text-align: center;
-  padding: 40px;
+  padding: 16px;
   gap: 32px;
 }
 
@@ -67,18 +67,68 @@
 
 .techGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+/* Small mobile adjustments */
+@media (min-width: 425px) {
+  .page {
+    padding: 24px;
+  }
+  
+  .techGrid {
+    gap: 12px;
+  }
+  
+  .techTile {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablet: 6 columns */
+@media (min-width: 768px) {
+  .page {
+    padding: 40px;
+  }
+  .techGrid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+  }
+
+  .techTile {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Desktop: flexible layout */
+@media (min-width: 1024px) {
+  .techGrid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 16px;
+  }
+
+  .techTile {
+    padding: 16px;
+    font-size: 1rem;
+  }
+
+  .techIcon {
+    max-height: none;
+  }
 }
 
 .techTile {
   background: rgba(0, 0, 0, 0.8);
   border: 2px solid #00ffff;
   border-radius: 8px;
-  padding: 16px;
+  padding: 6px;
+  font-size: 0.75rem;
   text-align: center;
   cursor: pointer;
   transition: box-shadow 0.3s;
@@ -91,6 +141,8 @@
 .techIcon {
   width: 100%;
   height: auto;
+  max-height: 80px;
+  object-fit: contain;
   margin-bottom: 8px;
 }
 
