@@ -24,6 +24,10 @@ const techStack = [
   { name: "Terraform", icon: "/terraform.svg" },
   { name: "Git", icon: "/git.svg" },
   { name: "Unreal Engine", icon: "/unreal.svg" },
+  //linux
+  //databases
+  //Rust
+  //Jenkins
 ];
 
 
