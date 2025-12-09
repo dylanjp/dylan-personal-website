@@ -46,6 +46,22 @@ export default function ResumePage() {
         {/* <button className={styles.downloadButton}>Download Resume</button> */} 
       </motion.div>
       
+      {/* PDF Button */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.8 }}
+      >
+        <a 
+          href="/DPResume2025 .pdf" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className={styles.pdfButton}
+        >
+          View Full Resume PDF
+        </a>
+      </motion.div>
+      
 {/* Tech Tiles Section (Dynamic Grid) */}
 <div className={styles.techSection}>
   <h2 className={styles.sectionTitle}>Tech Skills</h2>

@@ -6,6 +6,8 @@ const versionData = [
     releaseDate: "2025-12-07",
     notes: [
       "BLOG(s) Added: UNREAL ENGINE: You want to use blueprints.... trust me",
+      "Fixed Mobile views on resume page",
+      "Added resume download",
     ],
   },
   {
