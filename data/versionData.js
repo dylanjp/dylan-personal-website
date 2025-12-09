@@ -8,6 +8,7 @@ const versionData = [
       "BLOG(s) Added: UNREAL ENGINE: You want to use blueprints.... trust me",
       "Fixed Mobile views on resume page",
       "Added resume download",
+      "About me changes to Games section"
     ],
   },
   {
