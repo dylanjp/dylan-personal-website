@@ -6,6 +6,7 @@ import Background from "@/components/Background";
 import styles from "./blogPost.module.css";
 import BlogAnimator from "@/components/BlogAnimator";
 import { notFound } from "next/navigation";
+import blogs from "@/data/blogData";
 
 const postsDir = path.join(process.cwd(), "public", "blogs");
 
@@ -54,6 +55,10 @@ export default async function BlogPostPage({ params }) {
     const { slug } = await params;
     const filePath = path.join(postsDir, `${slug}.md`);
 
+    // Find the blog data to get animation setting
+    const blogData = blogs.find(blog => blog.slug === slug);
+    const enableAnimation = blogData?.enableAnimation ?? true; // Default to true if not found
+
     let content;
     try {
         content = await fs.readFile(filePath, "utf8");
@@ -65,18 +70,14 @@ export default async function BlogPostPage({ params }) {
     const htmlContent = marked.parse(content);
     const finalHtml = convertObsidianLinks(htmlContent);
 
-    // 2. We no longer need the class name variables here
-
     return (
         <div className={styles.pageWrapper}>
             <Navbar />
             <Background />
             <main className={styles.blogMain}>
-                {/* 3. Use the BlogAnimator and pass the HTML to it */}
-                <BlogAnimator htmlContent={finalHtml} />
+                {/* Pass both HTML content and animation setting */}
+                <BlogAnimator htmlContent={finalHtml} enableAnimation={enableAnimation} />
             </main>
-
-            {/* 4. The <script> tag is gone! */}
         </div>
     );
 }

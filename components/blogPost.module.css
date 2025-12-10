@@ -20,6 +20,27 @@
   text-shadow: none;
 }
 
+/* Character visibility control classes for invisible text reveal */
+.invisibleChar {
+  opacity: 0;
+  /* Preserve layout and spacing by maintaining the character's dimensions */
+  visibility: hidden;
+  /* Ensure smooth transitions when revealing */
+  transition: opacity 0.15s ease-in-out, visibility 0.15s ease-in-out;
+}
+
+.visibleChar {
+  opacity: 1;
+  visibility: visible;
+  /* Smooth transition effect for character reveal */
+  transition: opacity 0.15s ease-in-out, visibility 0.15s ease-in-out;
+}
+
+/* Transition class for smooth character appearance */
+.revealTransition {
+  transition: opacity 0.15s ease-in-out, visibility 0.15s ease-in-out;
+}
+
 /* existing styles (kept from your original file) */
 .blogContent p {
   margin-bottom: 1rem;

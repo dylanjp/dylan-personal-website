@@ -25,6 +25,26 @@
   text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
 
+/* Character visibility control for reveal effect */
+.invisibleChar {
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+}
+
+.visibleChar {
+  opacity: 1;
+  transition: opacity 0.1s ease-in;
+}
+
+/* Initial state - content hidden until animation starts */
+.initiallyHidden {
+  opacity: 0 !important;
+}
+
+.animationReady {
+  opacity: 1 !important;
+}
+
 /* existing styles (kept from your original file) */
 .blogContent p {
   margin-bottom: 1rem;
