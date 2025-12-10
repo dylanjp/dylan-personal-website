@@ -1,15 +1,15 @@
 // blogData.js
 const blogs = [
-     {
-      date: "2025-10-23",
-      title: "Building this Website / Blog",
-      image: "/blogimages/websit-blog.png",
-      description: "How I built and deployed this website and how you are reading this blog post.",
-      blogLocation: "/blogs/building-this-website-blog.md",
-      slug: "building-this-website-blog",
-      tags: ["Technology / Software"],
-      enableAnimation: true
-    },
+    //  {
+    //   date: "2025-10-23",
+    //   title: "Building this Website / Blog",
+    //   image: "/blogimages/websit-blog.png",
+    //   description: "How I built and deployed this website and how you are reading this blog post.",
+    //   blogLocation: "/blogs/building-this-website-blog.md",
+    //   slug: "building-this-website-blog",
+    //   tags: ["Technology / Software"],
+    //   enableAnimation: true
+    // },
     // {
     //   date: "2025-10-23",
     //   title: "Monster Hunter Wilds: A Fantastic Co-Op Adventure",

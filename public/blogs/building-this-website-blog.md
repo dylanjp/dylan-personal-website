@@ -25,8 +25,7 @@ allowfullscreen></iframe>
 ## Closing Thoughts
 
 Markdown makes blogging easy, and Next.js turns it into a fast, modern web experience.
-The Seven Atrocities are the 7 most powerful servants of the Dark Lord. They are normally cursed beings originating from the mortal world. Each one has a specific symbol branded onto them that corresponds with which atrocity they are. There have been several different characters that have held each position at different times in history.
 
-**List of Atrocities**
-
- [[2024-retrospective]]
+Blog links:
+[[2024-retrospective]]
+[[2024-unrealengine-video]]
