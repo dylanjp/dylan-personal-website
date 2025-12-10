@@ -221,8 +221,7 @@
 }
 
 /* Media Tiles */
-.playingTile,
-.readingTile {
+.playingTile {
   border: 3px solid #00ff88;
   border-radius: 8px;
   padding: 20px;
@@ -234,11 +233,33 @@
   justify-content: center;
 }
 
+.readingTile {
+  border: 3px solid #bc6bff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+  transition: all 0.3s ease;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.readingTile h2 {
+  color: #bc6bff;
+}
+
 .mediaImage {
   width: 100%;
   max-width: 200px;
   height: auto;
   margin: 2px auto 0;
+  object-fit: cover;
+  border: 3px solid #bc6bff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 /* Game Grid */
@@ -248,6 +269,21 @@
   gap: 12px;
   width: 100%;
   padding: 10px 0;
+}
+
+/* Center single items when only one game is present */
+.gameGridSingle {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 0;
+  justify-items: center;
+}
+
+/* Constrain single game image size to match 2-column layout */
+.gameGridSingle .gameImage {
+  max-width: calc(50% - 6px); /* Half container width minus half gap */
 }
 
 .gameImage {
@@ -263,6 +299,13 @@
 }
 
 .gameImage:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffff, 0 0 40px rgba(0, 255, 255, 0.7), 0 0 60px rgba(0, 255, 255, 0.5);
+  border-color: #00ffff;
+  z-index: 1;
+}
+
+.mediaImage:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px #00ffff, 0 0 40px rgba(0, 255, 255, 0.7), 0 0 60px rgba(0, 255, 255, 0.5);
   border-color: #00ffff;
@@ -378,6 +421,15 @@
   }
   to {
     box-shadow: 0 0 15px #00ff88, 0 0 30px rgba(0, 255, 136, 0.5);
+  }
+}
+
+@keyframes borderGlowPurple {
+  from {
+    box-shadow: 0 0 5px #9d4edd;
+  }
+  to {
+    box-shadow: 0 0 15px #9d4edd, 0 0 30px rgba(157, 78, 221, 0.5);
   }
 }
 
@@ -512,6 +564,16 @@
     borderGlowGreen calc(var(--animation-border-duration) * 0.5) var(--animation-easing) 0.8s forwards;
 }
 
+.border-purple {
+  color: #9d4edd;
+}
+
+.border-purple.border-draw.tile-enter-active {
+  animation: 
+    borderWidthGrow var(--animation-border-duration) var(--animation-border-easing) 0.4s forwards,
+    borderGlowPurple calc(var(--animation-border-duration) * 0.5) var(--animation-easing) 0.8s forwards;
+}
+
 /* Prefers Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
   .tile-enter,
@@ -545,7 +607,8 @@
   .border-cyan.border-draw.tile-enter-active,
   .border-cyan.border-draw.profile-tile-enter-active,
   .border-red.border-draw.tile-enter-active,
-  .border-green.border-draw.tile-enter-active {
+  .border-green.border-draw.tile-enter-active,
+  .border-purple.border-draw.tile-enter-active {
     animation: none !important;
   }
 }
@@ -569,10 +632,14 @@
   box-shadow: 0 0 20px #ff3366, 0 0 40px rgba(255, 51, 102, 0.7);
 }
 
-.playingTile:hover,
-.readingTile:hover {
+.playingTile:hover {
   transform: scale(1.02);
   box-shadow: 0 0 20px #00ff88, 0 0 40px rgba(0, 255, 136, 0.7);
+}
+
+.readingTile:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px #9d4edd, 0 0 40px rgba(157, 78, 221, 0.7);
 }
 
 /* Responsive Design */
@@ -597,6 +664,18 @@
     padding: 8px 0;
   }
 
+  .gameGridSingle {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 8px 0;
+    justify-items: center;
+  }
+
+  /* Constrain single game image size on tablet screens */
+  .gameGridSingle .gameImage {
+    max-width: calc(50% - 5px); /* Half container width minus half gap */
+  }
+
   .gameImage {
     max-width: 100%;
     width: 100%;
@@ -607,6 +686,10 @@
   .playingTile,
   .readingTile {
     padding: 15px;
+  }
+
+  .mediaImage {
+    max-width: 180px;
   }
 }
 
@@ -635,6 +718,18 @@
     padding: 5px 0;
   }
 
+  .gameGridSingle {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 5px 0;
+    justify-items: center;
+  }
+
+  /* Constrain single game image size on mobile screens */
+  .gameGridSingle .gameImage {
+    max-width: calc(50% - 4px); /* Half container width minus half gap */
+  }
+
   .gameImage {
     max-width: 100%;
     width: 100%;
@@ -658,6 +753,10 @@
   .readingTile {
     padding: 12px;
     min-height: 200px;
+  }
+
+  .mediaImage {
+    max-width: 150px;
   }
 
   /* Ensure navbar doesn't overlap */

@@ -3,103 +3,125 @@
 import { useEffect, useRef } from "react";
 import styles from "./blogPost.module.css";
 
-export default function BlogAnimator({ htmlContent }) {
-    const articleRef = useRef(null);
+export default function BlogAnimator({ 
+  htmlContent, 
+  enableAnimation = true,
+  durationMultiplier = 1,    // 1 = Normal time. 2 = Double the time. (SLOWER)
+  flickerIntervalMs = 1000   // 50ms (fast), 200ms (slow), 500ms (very slow). 
+}) {
+  const articleRef = useRef(null);
+  const animationRef = useRef(null);
 
-    // Get the actual CSS module class names
-    const decipheringClass = styles.deciphering || "deciphering";
-    const decodedClass = styles.decoded || "decoded";
+  useEffect(() => {
+    const root = articleRef.current;
+    if (!root) return;
 
-    useEffect(() => {
-        const root = articleRef.current;
-        if (!root) return;
+    if (animationRef.current) cancelAnimationFrame(animationRef.current);
 
-        // A list to store all active timeouts and intervals
-        const timers = [];
+    if (!enableAnimation) {
+      root.classList.add(styles.decoded || "decoded");
+      return;
+    }
 
-        // Start the main animation logic inside a timeout
-        const startTimeout = setTimeout(() => {
-            const CHARS = "!<>-_\\/[]{}-=+*^?#________";
-            root.classList.add(decipheringClass);
+    const NOISE = "!<a>-_\\/g[]{a}-=+d*^'?#xb!<>g-_\\/d[]{}ys-=+*^?#_z".repeat(50);
+    
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: (node) => {
+        if (node.parentNode && ["IFRAME", "SCRIPT", "STYLE"].includes(node.parentNode.nodeName)) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        return /\S/.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      },
+    });
 
-            const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-                acceptNode: function (node) {
-                    if (
-                        node.parentNode &&
-                        ["IFRAME", "SCRIPT"].includes(node.parentNode.nodeName)
-                    )
-                        return NodeFilter.FILTER_REJECT;
-                    return /\S/.test(node.nodeValue)
-                        ? NodeFilter.FILTER_ACCEPT
-                        : NodeFilter.FILTER_REJECT;
-                },
-            }, false);
+    const nodeData = [];
+    while (walker.nextNode()) {
+      const originalText = walker.currentNode.nodeValue;
+      
+      // Base calculation for a reasonable duration
+      const baseDuration = Math.min(2000, 500 + originalText.length * 30);
+      
+      nodeData.push({
+        node: walker.currentNode,
+        originalText: originalText,
+        length: originalText.length,
+        delay: (nodeData.length * 50) * durationMultiplier, 
+        duration: baseDuration * durationMultiplier,
+        
+        startTime: null 
+      });
+    }
 
-            const textNodes = [];
-            while (walker.nextNode()) textNodes.push(walker.currentNode);
+    // Initial State: Set everything to fully scrambled text
+    nodeData.forEach(data => {
+      data.node.nodeValue = NOISE.substring(0, data.length);
+    });
 
-            textNodes.forEach((node, index) => {
-                const original = node.nodeValue;
-                const len = original.length;
-                const durationMs = Math.min(1200, 300 + len * 12);
-                const frameMs = 25;
-                const frames = Math.max(6, Math.floor(durationMs / frameMs));
-                let frame = 0;
-                const startDelay = index * 35;
+    root.classList.remove(styles.initiallyHidden || "initiallyHidden");
+    root.classList.add(styles.deciphering || "deciphering");
 
-                const runInterval = function () {
-                    const interval = setInterval(() => {
-                        frame++;
-                        const revealCount = Math.floor((frame / frames) * original.length);
-                        const out = original
-                            .split("")
-                            .map((ch, i) => {
-                                if (ch === " " || ch === "\n" || ch === "\t") return ch;
-                                if (i < revealCount) return ch;
-                                return CHARS[Math.floor(Math.random() * CHARS.length)];
-                            })
-                            .join("");
-                        node.nodeValue = out;
-                        if (frame >= frames) {
-                            node.nodeValue = original;
-                            clearInterval(interval);
-                        }
-                    }, frameMs);
-                    timers.push(interval); // Store interval for cleanup
-                };
-                timers.push(setTimeout(runInterval, startDelay)); // Store timeout for cleanup
-            });
+    let globalStartTime = null;
 
-            const finalTimeout = setTimeout(() => {
-                root.classList.remove(decipheringClass);
-                root.classList.add(decodedClass);
-            }, 2200 + textNodes.length * 20);
-            timers.push(finalTimeout);
-        }, 50); // Original 50ms delay
+    const animate = (timestamp) => {
+      if (!globalStartTime) globalStartTime = timestamp;
+      
+      let allComplete = true;
+      const noiseOffset = Math.floor(timestamp / flickerIntervalMs) % 50; 
 
-        timers.push(startTimeout);
-
-        // **IMPORTANT: Cleanup function**
-        // This runs if the user navigates away before the animation finishes.
-        return () => {
-            timers.forEach((timer) => {
-                clearInterval(timer); // This works for both intervals and timeouts
-            });
-            // Ensure the content is in its final state if we unmount
-            if (articleRef.current) {
-                articleRef.current.classList.remove(decipheringClass);
-                articleRef.current.classList.add(decodedClass);
+      nodeData.forEach((data) => {
+        if (!data.startTime) {
+            if (timestamp - globalStartTime >= data.delay) {
+                data.startTime = timestamp;
+            } else {
+                allComplete = false;
+                if (timestamp - globalStartTime > 0) {
+                     data.node.nodeValue = NOISE.substring(noiseOffset, noiseOffset + data.length);
+                }
+                return;
             }
-        };
-    }, [htmlContent, decipheringClass, decodedClass]); // Re-run effect if blog content changes
+        }
 
-    // This component now renders the article
-    return (
-        <article
-            ref={articleRef}
-            id="blogContent"
-            className={styles.blogContent}
-            dangerouslySetInnerHTML={{ __html: htmlContent }}
-        />
-    );
+        const elapsed = timestamp - data.startTime;
+        const progress = Math.min(elapsed / data.duration, 1);
+
+        if (progress < 1) {
+          allComplete = false;
+          
+          const revealCount = Math.floor(data.length * progress);
+          const revealed = data.originalText.substring(0, revealCount);
+          
+          const remainingLen = data.length - revealCount;
+          const scrambled = NOISE.substring(noiseOffset, noiseOffset + remainingLen);
+
+          data.node.nodeValue = revealed + scrambled;
+          
+        } else if (!data.isDone) {
+          data.node.nodeValue = data.originalText;
+          data.isDone = true;
+        }
+      });
+
+      if (!allComplete) {
+        animationRef.current = requestAnimationFrame(animate);
+      } else {
+        root.classList.remove(styles.deciphering || "deciphering");
+        root.classList.add(styles.decoded || "decoded");
+      }
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
+      nodeData.forEach(data => data.node.nodeValue = data.originalText);
+    };
+  }, [htmlContent, enableAnimation, durationMultiplier, flickerIntervalMs]);
+
+  return (
+    <article
+      ref={articleRef}
+      className={`${styles.blogContent} ${styles.deciphering}`} 
+      dangerouslySetInnerHTML={{ __html: htmlContent }}
+    />
+  );
 }

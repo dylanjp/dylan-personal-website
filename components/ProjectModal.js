@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import styles from "./ProjectModal.module.css";
 import PrimaryButton from "./PrimaryButton";
+import TechnologyTag from "./TechnologyTag";
 
 export default function ProjectModal({ project, onClose }) {
 
@@ -18,6 +19,20 @@ export default function ProjectModal({ project, onClose }) {
       <div className={styles.modal}>
         <img src={project.image} alt={project.title} className={styles.modalImage} />
         <h2 className={styles.modalTitle}>{project.title}</h2>
+          {/* Technology Tags Section */}
+        {project.technologies && project.technologies.length > 0 && (
+          <div className={styles.technologySection}>
+            <div className={styles.technologyTags}>
+              {project.technologies.map((tech, index) => (
+                <TechnologyTag 
+                  key={index} 
+                  name={tech.name} 
+                  color={tech.color} 
+                />
+              ))}
+            </div>
+          </div>
+        )}
         <p className={styles.modalDescription}>{project.description}</p>
         <div className={styles.buttonRow}>
           {project.link ? (

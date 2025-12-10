@@ -92,8 +92,10 @@ export default function AboutPage() {
       // Add color-specific border classes
       if (tileId === 'smash-stats') {
         classes += ` ${styles['border-red']}`;
-      } else if (tileId === 'current-games' || tileId === 'current-books') {
+      } else if (tileId === 'current-games') {
         classes += ` ${styles['border-green']}`;
+      } else if (tileId === 'current-books') {
+        classes += ` ${styles['border-purple']}`;
       } else {
         classes += ` ${styles['border-cyan']}`;
       }
@@ -215,7 +217,7 @@ export default function AboutPage() {
           <div className={`${styles.playingTile} ${getTileAnimationClasses('current-games')}`}>
             <h2>{currentGamesTile.title}</h2>
             {currentGamesTile.type === "game-grid" ? (
-              <div className={styles.gameGrid}>
+              <div className={currentGamesTile.images.length === 1 ? styles.gameGridSingle : styles.gameGrid}>
                 {currentGamesTile.images.map((imageSrc, index) => (
                   <img
                     key={index}
@@ -236,11 +238,24 @@ export default function AboutPage() {
 
           <div className={`${styles.readingTile} ${getTileAnimationClasses('current-books')}`}>
             <h2>{currentBooksTile.title}</h2>
-            <img
-              src={currentBooksTile.imageSrc}
-              alt="Current Books"
-              className={styles.mediaImage}
-            />
+            {currentBooksTile.type === "game-grid" ? (
+              <div className={currentBooksTile.images.length === 1 ? styles.gameGridSingle : styles.gameGrid}>
+                {currentBooksTile.images.map((imageSrc, index) => (
+                  <img
+                    key={index}
+                    src={imageSrc}
+                    alt={`Book ${index + 1}`}
+                    className={styles.gameImage}
+                  />
+                ))}
+              </div>
+            ) : (
+              <img
+                src={currentBooksTile.imageSrc}
+                alt="Current Books"
+                className={styles.mediaImage}
+              />
+            )}
           </div>
         </div>
       </div>

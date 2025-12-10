@@ -17,15 +17,30 @@
 /* small glow so text pops while decoding */
 .deciphering {
   text-shadow: 0 0 6px #00ffff, 0 0 12px #00ffff;
-  /* you can animate more properties if you like */
 }
 
-/* optional final state */
 .decoded {
   text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
 
-/* existing styles (kept from your original file) */
+.invisibleChar {
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+}
+
+.visibleChar {
+  opacity: 1;
+  transition: opacity 0.1s ease-in;
+}
+
+.initiallyHidden {
+  opacity: 0 !important;
+}
+
+.animationReady {
+  opacity: 1 !important;
+}
+
 .blogContent p {
   margin-bottom: 1rem;
   font-size: 18px;

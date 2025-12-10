@@ -1,14 +1,23 @@
 // versionData.js
 
 const versionData = [
+  //  {
+  //   version: "v1.0.4",
+  //   releaseDate: "2025-12-10",
+  //   notes: [
+  //     "Updates to About Me Page",
+  //   ],
+  // },
   {
     version: "v1.0.3",
-    releaseDate: "2025-12-07",
+    releaseDate: "2025-12-10",
     notes: [
-      "BLOG(s) Added: UNREAL ENGINE: You want to use blueprints.... trust me",
-      "Fixed Mobile views on resume page",
-      "Added resume download",
-      "About me changes to Games section"
+      "BLOG(s) Added: UNREAL ENGINE: You want to use blueprints",
+      "Updates to About Me Page",
+      "Mobile View Fixes",
+      "Added Resume to resume page",
+      "Updates to Blogging system",
+      "Updates to the ProjectModals"
     ],
   },
   {
