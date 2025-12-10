@@ -3,6 +3,8 @@
   src: url("/fonts/ShareTechMono-Regular.ttf") format("truetype");
 }
 
+/* Animation Infrastructure - CSS Custom Properties defined in globals.css */
+
 .page {
   font-family: "TechMono";
   display: flex;
@@ -45,6 +47,34 @@
   padding: 20px;
   box-shadow: 0 0 15px #00ffff, 0 0 30px rgba(0, 255, 255, 0.5);
   transition: all 0.3s ease;
+}
+
+/* Ensure tiles start invisible when animation classes are applied */
+.profileTile.profile-tile-enter {
+  opacity: 0 !important;
+  transform: scale(0.8) !important;
+  border-width: 0 !important;
+  box-shadow: none !important;
+}
+
+.aboutTile.tile-enter,
+.stepTile.tile-enter,
+.smashTile.tile-enter,
+.playingTile.tile-enter,
+.readingTile.tile-enter,
+.pokemonTile.tile-enter {
+  opacity: 0 !important;
+  transform: scale(0.8) !important;
+}
+
+/* Hide borders for tiles with border animations */
+.aboutTile.tile-enter.border-draw,
+.stepTile.tile-enter.border-draw,
+.smashTile.tile-enter.border-draw,
+.playingTile.tile-enter.border-draw,
+.readingTile.tile-enter.border-draw {
+  border-width: 0 !important;
+  box-shadow: none !important;
 }
 
 .profileImage {
@@ -237,6 +267,287 @@
   box-shadow: 0 0 20px #00ffff, 0 0 40px rgba(0, 255, 255, 0.7), 0 0 60px rgba(0, 255, 255, 0.5);
   border-color: #00ffff;
   z-index: 1;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Combined Fade and Zoom Animation */
+@keyframes fadeZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes borderDrawTop {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes borderDrawRight {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes borderDrawBottom {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes borderDrawLeft {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes borderGlow {
+  from {
+    box-shadow: 0 0 5px currentColor;
+  }
+  to {
+    box-shadow: 0 0 15px currentColor, 0 0 30px rgba(0, 255, 255, 0.5);
+  }
+}
+
+@keyframes borderWidthGrow {
+  from {
+    border-width: 0;
+  }
+  to {
+    border-width: 3px;
+  }
+}
+
+@keyframes borderGlowCyan {
+  from {
+    box-shadow: 0 0 5px #00ffff;
+  }
+  to {
+    box-shadow: 0 0 15px #00ffff, 0 0 30px rgba(0, 255, 255, 0.5);
+  }
+}
+
+@keyframes borderGlowRed {
+  from {
+    box-shadow: 0 0 5px #ff3366;
+  }
+  to {
+    box-shadow: 0 0 15px #ff3366, 0 0 30px rgba(255, 51, 102, 0.5);
+  }
+}
+
+@keyframes borderGlowGreen {
+  from {
+    box-shadow: 0 0 5px #00ff88;
+  }
+  to {
+    box-shadow: 0 0 15px #00ff88, 0 0 30px rgba(0, 255, 136, 0.5);
+  }
+}
+
+/* Base Animation Classes */
+.tile-enter {
+  opacity: 0;
+  transform: scale(0.8);
+  will-change: opacity, transform;
+}
+
+.tile-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: 
+    opacity var(--animation-fade-duration) var(--animation-easing),
+    transform var(--animation-zoom-duration) var(--animation-easing);
+}
+
+/* Much Slower Profile Tile Animation */
+.profile-tile-enter {
+  opacity: 0;
+  transform: scale(0.8);
+  will-change: opacity, transform;
+}
+
+.profile-tile-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: 
+    opacity calc(var(--animation-fade-duration) * 4) ease-in-out,
+    transform calc(var(--animation-zoom-duration) * 4) ease-in-out;
+}
+
+.tile-enter-done {
+  opacity: 1;
+  transform: scale(1);
+  will-change: auto;
+}
+
+/* Zoom Animation Classes */
+.zoom-enter {
+  transform: scale(0.8);
+  will-change: transform;
+}
+
+.zoom-enter-active {
+  transform: scale(1);
+  transition: transform var(--animation-zoom-duration) var(--animation-easing);
+}
+
+.zoom-enter-done {
+  transform: scale(1);
+  will-change: auto;
+}
+
+/* Fade Animation Classes */
+.fade-enter {
+  opacity: 0;
+  will-change: opacity;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity var(--animation-fade-duration) var(--animation-easing);
+}
+
+.fade-enter-done {
+  opacity: 1;
+  will-change: auto;
+}
+
+/* Border Draw Animation Classes */
+.border-draw {
+  position: relative;
+  overflow: visible;
+}
+
+/* Start with no border */
+.border-draw.tile-enter {
+  border-width: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Animate border width and add glow */
+.border-draw.tile-enter-active {
+  border-color: currentColor !important;
+  animation: 
+    borderWidthGrow var(--animation-border-duration) var(--animation-border-easing) 0.4s forwards,
+    borderGlowEffect calc(var(--animation-border-duration) * 0.5) var(--animation-easing) 0.8s forwards;
+}
+
+/* TRON Legacy Border Glow */
+.border-glow {
+  animation: borderGlow var(--animation-border-duration) var(--animation-easing) 0.8s forwards;
+}
+
+/* Color Variants for Different Tile Types */
+.border-cyan {
+  color: #00ffff;
+}
+
+.border-cyan.border-draw.tile-enter-active {
+  animation: 
+    borderWidthGrow var(--animation-border-duration) var(--animation-border-easing) 0.4s forwards,
+    borderGlowCyan calc(var(--animation-border-duration) * 0.5) var(--animation-easing) 0.8s forwards;
+}
+
+/* Much slower border animation for profile tile */
+.border-cyan.border-draw.profile-tile-enter-active {
+  animation: 
+    borderWidthGrow calc(var(--animation-border-duration) * 3) ease-in-out 1.5s forwards,
+    borderGlowCyan calc(var(--animation-border-duration) * 2) ease-in-out 2.5s forwards;
+}
+
+.border-red {
+  color: #ff3366;
+}
+
+.border-red.border-draw.tile-enter-active {
+  animation: 
+    borderWidthGrow var(--animation-border-duration) var(--animation-border-easing) 0.4s forwards,
+    borderGlowRed calc(var(--animation-border-duration) * 0.5) var(--animation-easing) 0.8s forwards;
+}
+
+.border-green {
+  color: #00ff88;
+}
+
+.border-green.border-draw.tile-enter-active {
+  animation: 
+    borderWidthGrow var(--animation-border-duration) var(--animation-border-easing) 0.4s forwards,
+    borderGlowGreen calc(var(--animation-border-duration) * 0.5) var(--animation-easing) 0.8s forwards;
+}
+
+/* Prefers Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .tile-enter,
+  .tile-enter-active,
+  .tile-enter-done,
+  .profile-tile-enter,
+  .profile-tile-enter-active,
+  .zoom-enter,
+  .zoom-enter-active,
+  .zoom-enter-done {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+  
+  .border-draw.tile-enter,
+  .border-draw.profile-tile-enter {
+    border-width: 3px !important;
+    border-color: currentColor !important;
+  }
+  
+  .border-draw.tile-enter-active,
+  .border-draw.profile-tile-enter-active {
+    animation: none !important;
+    border-width: 3px !important;
+    border-color: currentColor !important;
+  }
+  
+  .border-cyan.border-draw.tile-enter-active,
+  .border-cyan.border-draw.profile-tile-enter-active,
+  .border-red.border-draw.tile-enter-active,
+  .border-green.border-draw.tile-enter-active {
+    animation: none !important;
+  }
 }
 
 /* Animations & Hover */
