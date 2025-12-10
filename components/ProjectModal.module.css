@@ -52,6 +52,18 @@
     color: #00ffff;
     margin-bottom: 20px;
   }
+
+  .technologySection {
+    margin-bottom: 20px;
+  }
+
+  .technologyTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+  }
   
   .buttonRow {
     display: flex;
