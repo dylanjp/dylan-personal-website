@@ -11,7 +11,7 @@ export const aboutPageData = [
         id: "about-me",
         title: "About Me",
         type: "text",
-        content: "Hi, I’m Dylan. I live in Utah with my wife, Kate, and our two kids. By day, I’m a full-stack developer, working on everything from backend systems to frontend experiences. I love solving problems, writing code, and occasionally solving stubborn bugs.  In my spare time, I run my own indie game studio, where I’m developing Project Swordbreak—a 3D action-adventure Zelda-like built in Unreal Engine 5. It’s a passion project that lets me bring my love for game design, programming, and world-building to life. When I’m not coding, I love building computers, reading fantasy novels, and playing games—especially Zelda, Super Smash Bros, and Pokémon.",
+        content: "Hi, I’m Dylan! I live in Utah with my wife Kate and our two kids. By day I’m a full-stack developer, working on frontend experiences and backend systems. I love solving problems, writing code, and investigating techy mysteries. In my spare time, I run my own game studio, where I build adventure games. I love game development. When I’m not in an IDE, I love building computers, reading fantasy novels, lifting weights, playing basketball, or playing games like Zelda, Super Smash Bros, and Pokémon.",
     },
     {
         id: "pokemon-team",
