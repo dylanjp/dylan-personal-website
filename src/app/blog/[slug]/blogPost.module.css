@@ -17,15 +17,12 @@
 /* small glow so text pops while decoding */
 .deciphering {
   text-shadow: 0 0 6px #00ffff, 0 0 12px #00ffff;
-  /* you can animate more properties if you like */
 }
 
-/* optional final state */
 .decoded {
   text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
 
-/* Character visibility control for reveal effect */
 .invisibleChar {
   opacity: 0;
   transition: opacity 0.1s ease-in;
@@ -36,7 +33,6 @@
   transition: opacity 0.1s ease-in;
 }
 
-/* Initial state - content hidden until animation starts */
 .initiallyHidden {
   opacity: 0 !important;
 }
@@ -45,7 +41,6 @@
   opacity: 1 !important;
 }
 
-/* existing styles (kept from your original file) */
 .blogContent p {
   margin-bottom: 1rem;
   font-size: 18px;

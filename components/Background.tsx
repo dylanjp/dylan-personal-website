@@ -36,21 +36,6 @@ const Background = () => {
             opacity: 0.2,
           }}
         />
-
-        {/* Moving Light Streaks */}
-        {/* <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundImage: "linear-gradient(90deg, rgba(0, 255, 255, 0.3) 2px, transparent 2px)",
-            backgroundSize: "5px 100%",
-            animation: "moveLights 5s linear infinite",
-          }}
-        /> */}
-
         {/* Keyframes for Animations */}
         <style>
           {`

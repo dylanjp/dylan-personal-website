@@ -6,11 +6,8 @@ import styles from "./blogPost.module.css";
 export default function BlogAnimator({ 
   htmlContent, 
   enableAnimation = true,
-  // 1. New Prop: Use a multiplier to increase duration
   durationMultiplier = 1,    // 1 = Normal time. 2 = Double the time. (SLOWER)
-  // 2. Adjust Flicker: Use milliseconds for clarity. 
-  flickerIntervalMs = 1000    // Time in milliseconds before the scrambled character changes. 
-                             // 50ms (fast), 200ms (slow), 500ms (very slow).
+  flickerIntervalMs = 1000   // 50ms (fast), 200ms (slow), 500ms (very slow). 
 }) {
   const articleRef = useRef(null);
   const animationRef = useRef(null);
@@ -48,8 +45,6 @@ export default function BlogAnimator({
         node: walker.currentNode,
         originalText: originalText,
         length: originalText.length,
-        
-        // 1. SLOWER REVEAL: Multiply the base duration/delay by the multiplier
         delay: (nodeData.length * 50) * durationMultiplier, 
         duration: baseDuration * durationMultiplier,
         
@@ -71,9 +66,6 @@ export default function BlogAnimator({
       if (!globalStartTime) globalStartTime = timestamp;
       
       let allComplete = true;
-
-      // 2. SLOWER FLICKER: Use flickerIntervalMs directly
-      // Math.floor(timestamp / 200) means the offset changes every 200ms
       const noiseOffset = Math.floor(timestamp / flickerIntervalMs) % 50; 
 
       nodeData.forEach((data) => {

@@ -16,7 +16,8 @@ const versionData = [
       "Updates to About Me Page",
       "Mobile View Fixes",
       "Added Resume to resume page",
-      "Updates to Blogging system"
+      "Updates to Blogging system",
+      "Updates to the ProjectModals"
     ],
   },
   {
