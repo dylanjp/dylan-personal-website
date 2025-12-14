@@ -15,7 +15,7 @@ export const metadata = {
   title: "Dylan John Pratt",
   description: "Dylan's Personal Website",
   icons: {
-    icon: '/favicon.ico',
+    icon: "/favicon.ico",
   },
 };
 

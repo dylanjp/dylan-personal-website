@@ -17,7 +17,7 @@ const versionData = [
       "Mobile View Fixes",
       "Added Resume to resume page",
       "Updates to Blogging system",
-      "Updates to the ProjectModals"
+      "Updates to the ProjectModals",
     ],
   },
   {
@@ -29,7 +29,7 @@ const versionData = [
       "Added BlogAnimator and other blog-related features",
       "Consolidated some elements",
       "Fixed some font styling",
-      "Standardized Button Component"
+      "Standardized Button Component",
     ],
   },
   {

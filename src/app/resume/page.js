@@ -30,7 +30,6 @@ const techStack = [
   //Jenkins
 ];
 
-
 //You can add the resume later
 
 export default function ResumePage() {
@@ -38,7 +37,7 @@ export default function ResumePage() {
     <div className={styles.page}>
       <Navbar />
       <Background />
-      
+
       {/* Hero Section */}
       <motion.div
         className={styles.hero}
@@ -47,48 +46,51 @@ export default function ResumePage() {
         transition={{ duration: 1 }}
       >
         <h1 className={styles.title}>My Skills & Experience</h1>
-        {/* <button className={styles.downloadButton}>Download Resume</button> */} 
+        {/* <button className={styles.downloadButton}>Download Resume</button> */}
       </motion.div>
-      
+
       {/* PDF Button */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.8 }}
       >
-        <a 
-          href="/DPResume2025 .pdf" 
-          target="_blank" 
+        <a
+          href="/DPResume2025 .pdf"
+          target="_blank"
           rel="noopener noreferrer"
           className={styles.pdfButton}
         >
           View Full Resume PDF
         </a>
       </motion.div>
-      
-{/* Tech Tiles Section (Dynamic Grid) */}
-<div className={styles.techSection}>
-  <h2 className={styles.sectionTitle}>Tech Skills</h2>
-  <motion.div 
-    className={styles.techGrid} 
-    initial={{ opacity: 0 }} 
-    animate={{ opacity: 1 }}
-    transition={{ delay: 0.5, duration: 1 }}
-  >
-    {techStack.map((tech, index) => (
-      <motion.div 
-        key={index} 
-        className={styles.techTile}
-        whileHover={{ scale: 1.1, rotate: 3 }}  // subtle rotation on hover
-      >
-        <img src={tech.icon} alt={tech.name} className={styles.techIcon} />
-        <p>{tech.name}</p>
-      </motion.div>
-    ))}
-  </motion.div>
-</div>
 
-      
+      {/* Tech Tiles Section (Dynamic Grid) */}
+      <div className={styles.techSection}>
+        <h2 className={styles.sectionTitle}>Tech Skills</h2>
+        <motion.div
+          className={styles.techGrid}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+        >
+          {techStack.map((tech, index) => (
+            <motion.div
+              key={index}
+              className={styles.techTile}
+              whileHover={{ scale: 1.1, rotate: 3 }} // subtle rotation on hover
+            >
+              <img
+                src={tech.icon}
+                alt={tech.name}
+                className={styles.techIcon}
+              />
+              <p>{tech.name}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+
       {/* Testimonials Section */}
       <TestimonialSection />
     </div>

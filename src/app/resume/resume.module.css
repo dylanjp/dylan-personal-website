@@ -12,7 +12,7 @@
   justify-content: center;
   min-height: 100vh;
   /* Cyberpunk grid background (replace with your background image) */
-  background: url('/images/cyber-grid.jpg') center/cover no-repeat;
+  background: url("/images/cyber-grid.jpg") center/cover no-repeat;
   color: #00ffff;
   font-family: "TechMono";
   text-align: center;
@@ -44,7 +44,10 @@
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s, transform 0.2s;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    transform 0.2s;
   margin-top: 20px;
 }
 
@@ -66,7 +69,10 @@
   text-decoration: none;
   display: inline-block;
   box-shadow: 0 0 10px #00ffff;
-  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    box-shadow 0.3s;
   margin-top: 20px;
 }
 
@@ -101,11 +107,11 @@
   .page {
     padding: 24px;
   }
-  
+
   .techGrid {
     gap: 12px;
   }
-  
+
   .techTile {
     padding: 8px;
     font-size: 0.8rem;
@@ -168,8 +174,8 @@
   margin-bottom: 8px;
 }
 
-
-.testimonials, .philosophy {
+.testimonials,
+.philosophy {
   max-width: 800px;
 }
 
@@ -185,6 +191,12 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

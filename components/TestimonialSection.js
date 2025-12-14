@@ -7,7 +7,8 @@ import styles from "./TestimonialSection.module.css";
 const testimonials = [
   {
     text: "Dylan is fantastic to work with. He is super responsive, is a great listener, has creative ideas, is tenacious at solving techy mysteries, and has complete follow through. And he is fun to be with! I hope to work with him again in the future!",
-    author: "Adrienne Chamberlain (Associate Director, Experiential Learning & Internships)",
+    author:
+      "Adrienne Chamberlain (Associate Director, Experiential Learning & Internships)",
   },
   {
     text: "I absolutely loved working with Dylan. We spent some time assigned to the same project which required collaboration and frequent communication. I could not recommend Dylan high enough. He was the perfect teammate and coworker!",
@@ -21,7 +22,7 @@ const testimonials = [
     text: "He personally researched the development of web services on AWS and presented an excellent training on this topic to our organization.",
     author: "Robert Thornton (Software Engineer)",
   },
-    {
+  {
     text: "Dylan was incredible to work with. I highly recommend Dylan's services to anyone who needs a quality product delivered efficiently and professionally.",
     author: "Dalton Smith (Client)",
   },
@@ -47,7 +48,9 @@ export default function TestimonialSection() {
 
   const goNext = () => setCurrent((prev) => (prev + 1) % testimonials.length);
   const goPrev = () =>
-    setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrent(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
+    );
 
   const variants = {
     hidden: { opacity: 0, filter: "blur(4px)", x: -20 },
@@ -57,7 +60,12 @@ export default function TestimonialSection() {
       x: 0,
       transition: { duration: 0.8 },
     },
-    exit: { opacity: 0, filter: "blur(4px)", x: 20, transition: { duration: 0.3 } },
+    exit: {
+      opacity: 0,
+      filter: "blur(4px)",
+      x: 20,
+      transition: { duration: 0.3 },
+    },
   };
 
   return (
@@ -82,7 +90,6 @@ export default function TestimonialSection() {
       </div>
       {/* <FaArrowLeft className={`${styles.arrow} ${styles["arrow-left"]}`} onClick={goPrev} />
 <FaArrowRight className={`${styles.arrow} ${styles["arrow-right"]}`} onClick={goNext} /> */}
-
     </div>
   );
 }

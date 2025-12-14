@@ -45,7 +45,9 @@
   border: 3px solid #00ffff;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 0 15px #00ffff, 0 0 30px rgba(0, 255, 255, 0.5);
+  box-shadow:
+    0 0 15px #00ffff,
+    0 0 30px rgba(0, 255, 255, 0.5);
   transition: all 0.3s ease;
 }
 
@@ -91,7 +93,9 @@
   border: 3px solid #00ffff;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 0 15px #00ffff, 0 0 30px rgba(0, 255, 255, 0.5);
+  box-shadow:
+    0 0 15px #00ffff,
+    0 0 30px rgba(0, 255, 255, 0.5);
   transition: all 0.3s ease;
 }
 
@@ -142,7 +146,9 @@
 
 .pokemonImage:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px #00ffff, 0 0 40px rgba(0, 255, 255, 0.7);
+  box-shadow:
+    0 0 20px #00ffff,
+    0 0 40px rgba(0, 255, 255, 0.7);
   z-index: 1; /* Bring hovered image to front */
 }
 
@@ -152,7 +158,9 @@
   border: 3px solid #00ffff;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 0 15px #00ffff, 0 0 30px rgba(0, 255, 255, 0.5);
+  box-shadow:
+    0 0 15px #00ffff,
+    0 0 30px rgba(0, 255, 255, 0.5);
   transition: all 0.3s ease;
   text-align: center;
 }
@@ -300,14 +308,20 @@
 
 .gameImage:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px #00ffff, 0 0 40px rgba(0, 255, 255, 0.7), 0 0 60px rgba(0, 255, 255, 0.5);
+  box-shadow:
+    0 0 20px #00ffff,
+    0 0 40px rgba(0, 255, 255, 0.7),
+    0 0 60px rgba(0, 255, 255, 0.5);
   border-color: #00ffff;
   z-index: 1;
 }
 
 .mediaImage:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px #00ffff, 0 0 40px rgba(0, 255, 255, 0.7), 0 0 60px rgba(0, 255, 255, 0.5);
+  box-shadow:
+    0 0 20px #00ffff,
+    0 0 40px rgba(0, 255, 255, 0.7),
+    0 0 60px rgba(0, 255, 255, 0.5);
   border-color: #00ffff;
   z-index: 1;
 }
@@ -384,7 +398,9 @@
     box-shadow: 0 0 5px currentColor;
   }
   to {
-    box-shadow: 0 0 15px currentColor, 0 0 30px rgba(0, 255, 255, 0.5);
+    box-shadow:
+      0 0 15px currentColor,
+      0 0 30px rgba(0, 255, 255, 0.5);
   }
 }
 
@@ -402,7 +418,9 @@
     box-shadow: 0 0 5px #00ffff;
   }
   to {
-    box-shadow: 0 0 15px #00ffff, 0 0 30px rgba(0, 255, 255, 0.5);
+    box-shadow:
+      0 0 15px #00ffff,
+      0 0 30px rgba(0, 255, 255, 0.5);
   }
 }
 
@@ -411,7 +429,9 @@
     box-shadow: 0 0 5px #ff3366;
   }
   to {
-    box-shadow: 0 0 15px #ff3366, 0 0 30px rgba(255, 51, 102, 0.5);
+    box-shadow:
+      0 0 15px #ff3366,
+      0 0 30px rgba(255, 51, 102, 0.5);
   }
 }
 
@@ -420,7 +440,9 @@
     box-shadow: 0 0 5px #00ff88;
   }
   to {
-    box-shadow: 0 0 15px #00ff88, 0 0 30px rgba(0, 255, 136, 0.5);
+    box-shadow:
+      0 0 15px #00ff88,
+      0 0 30px rgba(0, 255, 136, 0.5);
   }
 }
 
@@ -429,7 +451,9 @@
     box-shadow: 0 0 5px #9d4edd;
   }
   to {
-    box-shadow: 0 0 15px #9d4edd, 0 0 30px rgba(157, 78, 221, 0.5);
+    box-shadow:
+      0 0 15px #9d4edd,
+      0 0 30px rgba(157, 78, 221, 0.5);
   }
 }
 
@@ -443,7 +467,7 @@
 .tile-enter-active {
   opacity: 1;
   transform: scale(1);
-  transition: 
+  transition:
     opacity var(--animation-fade-duration) var(--animation-easing),
     transform var(--animation-zoom-duration) var(--animation-easing);
 }
@@ -458,7 +482,7 @@
 .profile-tile-enter-active {
   opacity: 1;
   transform: scale(1);
-  transition: 
+  transition:
     opacity calc(var(--animation-fade-duration) * 4) ease-in-out,
     transform calc(var(--animation-zoom-duration) * 4) ease-in-out;
 }
@@ -516,14 +540,17 @@
 /* Animate border width and add glow */
 .border-draw.tile-enter-active {
   border-color: currentColor !important;
-  animation: 
-    borderWidthGrow var(--animation-border-duration) var(--animation-border-easing) 0.4s forwards,
-    borderGlowEffect calc(var(--animation-border-duration) * 0.5) var(--animation-easing) 0.8s forwards;
+  animation:
+    borderWidthGrow var(--animation-border-duration)
+      var(--animation-border-easing) 0.4s forwards,
+    borderGlowEffect calc(var(--animation-border-duration) * 0.5)
+      var(--animation-easing) 0.8s forwards;
 }
 
 /* TRON Legacy Border Glow */
 .border-glow {
-  animation: borderGlow var(--animation-border-duration) var(--animation-easing) 0.8s forwards;
+  animation: borderGlow var(--animation-border-duration) var(--animation-easing)
+    0.8s forwards;
 }
 
 /* Color Variants for Different Tile Types */
@@ -532,16 +559,20 @@
 }
 
 .border-cyan.border-draw.tile-enter-active {
-  animation: 
-    borderWidthGrow var(--animation-border-duration) var(--animation-border-easing) 0.4s forwards,
-    borderGlowCyan calc(var(--animation-border-duration) * 0.5) var(--animation-easing) 0.8s forwards;
+  animation:
+    borderWidthGrow var(--animation-border-duration)
+      var(--animation-border-easing) 0.4s forwards,
+    borderGlowCyan calc(var(--animation-border-duration) * 0.5)
+      var(--animation-easing) 0.8s forwards;
 }
 
 /* Much slower border animation for profile tile */
 .border-cyan.border-draw.profile-tile-enter-active {
-  animation: 
-    borderWidthGrow calc(var(--animation-border-duration) * 3) ease-in-out 1.5s forwards,
-    borderGlowCyan calc(var(--animation-border-duration) * 2) ease-in-out 2.5s forwards;
+  animation:
+    borderWidthGrow calc(var(--animation-border-duration) * 3) ease-in-out 1.5s
+      forwards,
+    borderGlowCyan calc(var(--animation-border-duration) * 2) ease-in-out 2.5s
+      forwards;
 }
 
 .border-red {
@@ -549,9 +580,11 @@
 }
 
 .border-red.border-draw.tile-enter-active {
-  animation: 
-    borderWidthGrow var(--animation-border-duration) var(--animation-border-easing) 0.4s forwards,
-    borderGlowRed calc(var(--animation-border-duration) * 0.5) var(--animation-easing) 0.8s forwards;
+  animation:
+    borderWidthGrow var(--animation-border-duration)
+      var(--animation-border-easing) 0.4s forwards,
+    borderGlowRed calc(var(--animation-border-duration) * 0.5)
+      var(--animation-easing) 0.8s forwards;
 }
 
 .border-green {
@@ -559,9 +592,11 @@
 }
 
 .border-green.border-draw.tile-enter-active {
-  animation: 
-    borderWidthGrow var(--animation-border-duration) var(--animation-border-easing) 0.4s forwards,
-    borderGlowGreen calc(var(--animation-border-duration) * 0.5) var(--animation-easing) 0.8s forwards;
+  animation:
+    borderWidthGrow var(--animation-border-duration)
+      var(--animation-border-easing) 0.4s forwards,
+    borderGlowGreen calc(var(--animation-border-duration) * 0.5)
+      var(--animation-easing) 0.8s forwards;
 }
 
 .border-purple {
@@ -569,9 +604,11 @@
 }
 
 .border-purple.border-draw.tile-enter-active {
-  animation: 
-    borderWidthGrow var(--animation-border-duration) var(--animation-border-easing) 0.4s forwards,
-    borderGlowPurple calc(var(--animation-border-duration) * 0.5) var(--animation-easing) 0.8s forwards;
+  animation:
+    borderWidthGrow var(--animation-border-duration)
+      var(--animation-border-easing) 0.4s forwards,
+    borderGlowPurple calc(var(--animation-border-duration) * 0.5)
+      var(--animation-easing) 0.8s forwards;
 }
 
 /* Prefers Reduced Motion Support */
@@ -590,20 +627,20 @@
     transform: none !important;
     will-change: auto !important;
   }
-  
+
   .border-draw.tile-enter,
   .border-draw.profile-tile-enter {
     border-width: 3px !important;
     border-color: currentColor !important;
   }
-  
+
   .border-draw.tile-enter-active,
   .border-draw.profile-tile-enter-active {
     animation: none !important;
     border-width: 3px !important;
     border-color: currentColor !important;
   }
-  
+
   .border-cyan.border-draw.tile-enter-active,
   .border-cyan.border-draw.profile-tile-enter-active,
   .border-red.border-draw.tile-enter-active,
@@ -615,8 +652,12 @@
 
 /* Animations & Hover */
 @keyframes pulseGlow {
-  from { text-shadow: 0 0 10px rgba(0, 255, 157, 0.6); }
-  to { text-shadow: 0 0 20px rgba(0, 255, 157, 0.8); }
+  from {
+    text-shadow: 0 0 10px rgba(0, 255, 157, 0.6);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(0, 255, 157, 0.8);
+  }
 }
 
 .profileTile:hover,
@@ -624,27 +665,34 @@
 /* .pokemonTile:hover, */
 .stepTile:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 20px #00ffff, 0 0 40px rgba(0, 255, 255, 0.7);
+  box-shadow:
+    0 0 20px #00ffff,
+    0 0 40px rgba(0, 255, 255, 0.7);
 }
 
 .smashTile:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 20px #ff3366, 0 0 40px rgba(255, 51, 102, 0.7);
+  box-shadow:
+    0 0 20px #ff3366,
+    0 0 40px rgba(255, 51, 102, 0.7);
 }
 
 .playingTile:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 20px #00ff88, 0 0 40px rgba(0, 255, 136, 0.7);
+  box-shadow:
+    0 0 20px #00ff88,
+    0 0 40px rgba(0, 255, 136, 0.7);
 }
 
 .readingTile:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 20px #9d4edd, 0 0 40px rgba(157, 78, 221, 0.7);
+  box-shadow:
+    0 0 20px #9d4edd,
+    0 0 40px rgba(157, 78, 221, 0.7);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-
   .tileColumn {
     width: 100%;
     max-width: 400px;
@@ -701,7 +749,10 @@
 
   /* Smaller Pokémon images */
   .pokemonGrid {
-    grid-template-columns: repeat(2, 1fr) !important; /* 2 columns instead of 1 */
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ) !important; /* 2 columns instead of 1 */
     gap: 8px;
     padding: 5px;
   }
@@ -742,7 +793,7 @@
   .tileColumn {
     gap: 1.5rem;
   }
-  
+
   .profileTile,
   .aboutTile,
   .stepTile {
