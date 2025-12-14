@@ -1,23 +1,26 @@
 1:"$Sreact.fragment"
-2:I[7555,[],""]
-3:I[1295,[],""]
-4:I[2613,["711","static/chunks/8e1d74a4-b5ef5e9e638c19d2.js","975","static/chunks/975-9dd218042cffaabc.js","345","static/chunks/app/not-found-44b522f06b53d843.js"],"default"]
-6:I[9665,[],"OutletBoundary"]
-9:I[9665,[],"ViewportBoundary"]
-b:I[9665,[],"MetadataBoundary"]
-d:I[6614,[],""]
+2:I[9766,[],""]
+3:I[8924,[],""]
+4:I[9358,["711","static/chunks/8e1d74a4-e7b7eafee055537a.js","666","static/chunks/666-8bc15177311124cb.js","345","static/chunks/app/not-found-9defb7969e8b00be.js"],"default"]
+6:I[4431,[],"OutletBoundary"]
+8:I[5278,[],"AsyncMetadataOutlet"]
+a:I[4431,[],"ViewportBoundary"]
+c:I[4431,[],"MetadataBoundary"]
+d:"$Sreact.suspense"
+f:I[7150,[],""]
 :HL["https://dylanjohnpratt.com/_next/static/css/68aa17172f128036.css","style"]
-:HL["https://dylanjohnpratt.com/_next/static/css/d1947a9b2071fea1.css","style"]
-:HL["https://dylanjohnpratt.com/_next/static/css/c8bcdac00af04d36.css","style"]
-0:{"P":null,"b":"ZEgc_cIXOGeYfm_lkaQoi","p":"https://dylanjohnpratt.com","c":["","blog","2024-unrealengine-video",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","2024-unrealengine-video","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"https://dylanjohnpratt.com/_next/static/css/68aa17172f128036.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__variable_e773a9 __variable_a622d0","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L4",null,{}],[["$","link","0",{"rel":"stylesheet","href":"https://dylanjohnpratt.com/_next/static/css/c8bcdac00af04d36.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","2024-unrealengine-video","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5","$undefined",[["$","link","0",{"rel":"stylesheet","href":"https://dylanjohnpratt.com/_next/static/css/d1947a9b2071fea1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"https://dylanjohnpratt.com/_next/static/css/c8bcdac00af04d36.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$L6",null,{"children":["$L7","$L8",null]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","jnEM5nE0nY_4R_gOYpvUQ",{"children":[["$","$L9",null,{"children":"$La"}],null]}],["$","$Lb",null,{"children":"$Lc"}]]}],false]],"m":"$undefined","G":["$d","$undefined"],"s":false,"S":true}
-a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+:HL["https://dylanjohnpratt.com/_next/static/css/d1314da188369e83.css","style"]
+:HL["https://dylanjohnpratt.com/_next/static/css/1bd0a67e0648883d.css","style"]
+0:{"P":null,"b":"uygZD5gD4idP07NAJLOFe","p":"https://dylanjohnpratt.com","c":["","blog","2024-unrealengine-video",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","2024-unrealengine-video","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"https://dylanjohnpratt.com/_next/static/css/68aa17172f128036.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__variable_e773a9 __variable_a622d0","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L4",null,{}],[["$","link","0",{"rel":"stylesheet","href":"https://dylanjohnpratt.com/_next/static/css/1bd0a67e0648883d.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","2024-unrealengine-video","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",[["$","link","0",{"rel":"stylesheet","href":"https://dylanjohnpratt.com/_next/static/css/d1314da188369e83.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"https://dylanjohnpratt.com/_next/static/css/1bd0a67e0648883d.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$L6",null,{"children":["$L7",["$","$L8",null,{"promise":"$@9"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$La",null,{"children":"$Lb"}],null],["$","$Lc",null,{"children":["$","div",null,{"hidden":true,"children":["$","$d",null,{"fallback":null,"children":"$Le"}]}]}]]}],false]],"m":"$undefined","G":["$f",[]],"s":false,"S":true}
+b:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 7:null
-8:null
-c:[["$","title","0",{"children":"Dylan John Pratt"}],["$","meta","1",{"name":"description","content":"Dylan's Personal Website"}],["$","link","2",{"rel":"icon","href":"/favicon.ico"}]]
-e:I[6740,["711","static/chunks/8e1d74a4-b5ef5e9e638c19d2.js","975","static/chunks/975-9dd218042cffaabc.js","953","static/chunks/app/blog/%5Bslug%5D/page-a9cc447338871a8e.js"],"default"]
-f:I[4091,["711","static/chunks/8e1d74a4-b5ef5e9e638c19d2.js","975","static/chunks/975-9dd218042cffaabc.js","953","static/chunks/app/blog/%5Bslug%5D/page-a9cc447338871a8e.js"],"default"]
-10:I[7916,["711","static/chunks/8e1d74a4-b5ef5e9e638c19d2.js","975","static/chunks/975-9dd218042cffaabc.js","953","static/chunks/app/blog/%5Bslug%5D/page-a9cc447338871a8e.js"],"default"]
-11:T42d,<h1>UNREAL ENGINE: You want to use blueprints.... trust me</h1>
+10:I[622,[],"IconMark"]
+9:{"metadata":[["$","title","0",{"children":"Dylan John Pratt"}],["$","meta","1",{"name":"description","content":"Dylan's Personal Website"}],["$","link","2",{"rel":"icon","href":"/favicon.ico"}],["$","$L10","3",{}]],"error":null,"digest":"$undefined"}
+e:"$9:metadata"
+11:I[1314,["711","static/chunks/8e1d74a4-e7b7eafee055537a.js","666","static/chunks/666-8bc15177311124cb.js","953","static/chunks/app/blog/%5Bslug%5D/page-dd62ab511d3fdbc0.js"],"default"]
+12:I[7414,["711","static/chunks/8e1d74a4-e7b7eafee055537a.js","666","static/chunks/666-8bc15177311124cb.js","953","static/chunks/app/blog/%5Bslug%5D/page-dd62ab511d3fdbc0.js"],"default"]
+13:I[8615,["711","static/chunks/8e1d74a4-e7b7eafee055537a.js","666","static/chunks/666-8bc15177311124cb.js","953","static/chunks/app/blog/%5Bslug%5D/page-dd62ab511d3fdbc0.js"],"default"]
+14:T42d,<h1>UNREAL ENGINE: You want to use blueprints.... trust me</h1>
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/OJ_YPZh8vz0"
 title="YouTube video player"
@@ -26,4 +29,4 @@ allowfullscreen></iframe>
 
 <p>This video is a recording of my presentation “Introduction to Unreal Engine &amp; Blueprints: You Want to Use Blueprints, Trust Me” delivered to the Timpanogos Game Dev Group in Utah on January 30, 2024. In the talk, I introduce the basics of Unreal Engine and explain why Blueprints — Unreal’s visual scripting system — are such a powerful, accessible way to build gameplay without needing deep programming experience. I walk through real examples, core concepts, and practical tips to help new developers prototype faster and work more creatively inside Unreal.</p>
 <p>The presentation was also featured in the local newspaper, highlighting the growing interest in game development within the Utah community. This video is a great starting point for anyone curious about learning Unreal Engine or leveling up their Blueprint skills.</p>
-5:["$","div",null,{"className":"$undefined","children":[["$","$Le",null,{}],["$","$Lf",null,{}],["$","main",null,{"className":"blogPost_blogMain__8kfpf","children":["$","$L10",null,{"htmlContent":"$11","enableAnimation":true}]}]]}]
+5:["$","div",null,{"className":"$undefined","children":[["$","$L11",null,{}],["$","$L12",null,{}],["$","main",null,{"className":"blogPost_blogMain__8kfpf","children":["$","$L13",null,{"htmlContent":"$14","enableAnimation":true}]}]]}]
