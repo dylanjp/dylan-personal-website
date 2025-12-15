@@ -3,6 +3,7 @@
   "name": "dylan-personal-website",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out",
