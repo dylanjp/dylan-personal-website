@@ -19,6 +19,16 @@ const blogs = [
   //   slug: "monster-hunter-wilds",
   //   tags: ["Reviews"]
   // },
+    {
+    id: "2026-01-06",
+    title: "2025 Retrospective",
+    image: "/images/2025-logo.png",
+    description: "My reflections and key learnings from the year 2025.",
+    blogLocation: "/blogs/2025-retrospective.md",
+    slug: "2025-retrospective",
+    tags: ["Personal"],
+    enableAnimation: true, //around 5000 character has issues
+  },
   {
     id: "2024-12-31",
     title: "2024 Retrospective",
