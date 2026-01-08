@@ -51,7 +51,11 @@ I enjoyed all of the shows more than I expected. I was most surprised by The Gre
 
 For Kate, I said she had to beat Halo Combat Evolved with me. She also had to participate in a Halo LAN party. She hasn’t done the LAN party yet because our basement wasn’t finished and we wanted it to be a bigger event. We’re planning to do it in February of 2026, just before Valentine’s Day. Here’s what Kate had to say about Halo Combat Evolved:
 
-"Words"
+"Halo was really different from the other games I’ve played. It took me about half the game to feel like my controller skills were strong enough to actually help Dylan. It takes some time to check ammo levels, switch guns, and aim accurately without thinking. I think I would have to play it through by myself another whole time to be able to use the rocket launcher correctly. lol. 
+
+In general, it’s very much a boys game (the only “girl” is an AI in a body suit) and the plot wasn’t as deep, creative, or funny as Ocarina of Time. It’s the perfect game for those times where you just feel like running around and shooting things. 
+
+I don’t have that inclination very often, so my favorite part was definitely playing it and spending time with Dylan. I think I will enjoy the LAN party too! I’m really excited to have that experience!"
 
 ### Step Counting 2025
 
