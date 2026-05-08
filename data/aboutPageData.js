@@ -31,7 +31,7 @@ export const aboutPageData = [
     id: "step-counter",
     title: "2026 STEP COUNTER:",
     type: "counter",
-    content: "918,304",
+    content: "1,273,007",
   },
   {
     id: "smash-stats",
@@ -49,7 +49,7 @@ export const aboutPageData = [
     id: "current-games",
     title: `WHAT I'M PLAYING (${new Date().getFullYear()})`,
     type: "game-grid",
-    images: ["/images/gameYear.png", "/images/gameYear2.png", "/images/gameYear3.png"],
+    images: ["/images/gameYear.png", "/images/gameYear2.png", "/images/gameYear3.png","/images/gameYear4.png" ],
   },
   {
     id: "current-books",
