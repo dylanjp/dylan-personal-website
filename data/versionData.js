@@ -1,13 +1,15 @@
 // versionData.js
 
 const versionData = [
-  //  {
-  //   version: "v1.0.4",
-  //   releaseDate: "2025-12-10",
-  //   notes: [
-  //     "Updates to About Me Page",
-  //   ],
-  // },
+  {
+    version: "v1.0.4",
+    releaseDate: "2026-07-06",
+    notes: [
+      "About Page: Added My Workstation, Master Rank Teams, My Car, and Favorite Books tiles",
+      "Projects Page: Added PARADISE project",
+      "Other minor updates and fixes",
+    ],
+  },
   {
     version: "v1.0.3",
     releaseDate: "2025-12-10",

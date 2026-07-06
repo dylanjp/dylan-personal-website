@@ -7,6 +7,28 @@ import Navbar from "@/components/Navbar";
 import { aboutPageData } from "@/data/aboutPageData";
 import styles from "./about.module.css";
 
+const pokeSprite = (dexId) =>
+  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexId}.png`;
+
+// PokeAPI's sprite repo lacks most gen 8+ item sprites — those come from Serebii instead
+const ITEM_SPRITE_OVERRIDES = {
+  "booster-energy": "https://www.serebii.net/itemdex/sprites/boosterenergy.png",
+  "loaded-dice": "https://www.serebii.net/itemdex/sprites/loadeddice.png",
+  "heavy-duty-boots":
+    "https://www.serebii.net/itemdex/sprites/heavy-dutyboots.png",
+  "covert-cloak": "https://www.serebii.net/itemdex/sprites/covertcloak.png",
+  "clear-amulet": "https://www.serebii.net/itemdex/sprites/clearamulet.png",
+  "throat-spray": "https://www.serebii.net/itemdex/sprites/throatspray.png",
+  "ability-shield": "https://www.serebii.net/itemdex/sprites/abilityshield.png",
+  "mirror-herb": "https://www.serebii.net/itemdex/sprites/mirrorherb.png",
+  "punching-glove": "https://www.serebii.net/itemdex/sprites/punchingglove.png",
+  staraptite: "https://www.serebii.net/itemdex/sprites/staraptite.png",
+};
+
+const itemSprite = (slug) =>
+  ITEM_SPRITE_OVERRIDES[slug] ||
+  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${slug}.png`;
+
 export default function AboutPage() {
   const router = useRouter();
   const currentYear = new Date().getFullYear();
@@ -21,6 +43,10 @@ export default function AboutPage() {
     "current-games": { delay: 750, type: "fade-zoom-border" },
     "current-books": { delay: 900, type: "fade-zoom-border" },
     "favorite-software": { delay: 1050, type: "fade-zoom-border" },
+    workstation: { delay: 1200, type: "fade-zoom-border" },
+    "master-rank-teams": { delay: 1350, type: "fade-zoom-border" },
+    "my-car": { delay: 1500, type: "fade-zoom-border" },
+    "favorite-books": { delay: 1650, type: "fade-zoom-border" },
   };
 
   // 2. FIXED STATE: Initialize with all keys immediately
@@ -96,6 +122,14 @@ export default function AboutPage() {
         classes += ` ${styles["border-green"]}`;
       } else if (tileId === "current-books") {
         classes += ` ${styles["border-purple"]}`;
+      } else if (tileId === "workstation") {
+        classes += ` ${styles["border-orange"]}`;
+      } else if (tileId === "master-rank-teams") {
+        classes += ` ${styles["border-magenta"]}`;
+      } else if (tileId === "my-car") {
+        classes += ` ${styles["border-red"]}`;
+      } else if (tileId === "favorite-books") {
+        classes += ` ${styles["border-green"]}`;
       } else {
         classes += ` ${styles["border-cyan"]}`;
       }
@@ -126,6 +160,16 @@ export default function AboutPage() {
   );
   const favoriteSoftwareTile = aboutPageData.find(
     (tile) => tile.id === "favorite-software",
+  );
+  const workstationTile = aboutPageData.find(
+    (tile) => tile.id === "workstation",
+  );
+  const masterRankTile = aboutPageData.find(
+    (tile) => tile.id === "master-rank-teams",
+  );
+  const myCarTile = aboutPageData.find((tile) => tile.id === "my-car");
+  const favoriteBooksTile = aboutPageData.find(
+    (tile) => tile.id === "favorite-books",
   );
 
   return (
@@ -171,6 +215,62 @@ export default function AboutPage() {
                     className={styles.smashCharacter}
                   />
                 ))}
+              </div>
+            </div>
+          </div>
+
+          <div
+            className={`${styles.workstationTile} ${getTileAnimationClasses("workstation")}`}
+          >
+            <h2>{workstationTile.title}</h2>
+            <div className={styles.specList}>
+              {workstationTile.content.map((spec) => (
+                <div key={spec.label} className={styles.specItem}>
+                  <span className={styles.specLabel}>{spec.label}</span>
+                  <span className={styles.specValue}>{spec.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div
+            className={`${styles.carTile} ${getTileAnimationClasses("my-car")}`}
+          >
+            <h2>{myCarTile.title}</h2>
+            <span className={styles.carSubtitle}>{myCarTile.subtitle}</span>
+            <div className={styles.carStage}>
+              <img
+                src={myCarTile.imageSrc}
+                alt="Toyota 86"
+                className={styles.carImage}
+              />
+              <div className={styles.carGlow}></div>
+            </div>
+          </div>
+
+          <div
+            className={`${styles.booksTile} ${getTileAnimationClasses("favorite-books")}`}
+          >
+            <h2>{favoriteBooksTile.title}</h2>
+            <div className={styles.terminalWindow}>
+              <div className={styles.terminalHeader}>
+                dylan@library:~$ cat favorites.txt
+              </div>
+              {favoriteBooksTile.content.map((book, index) => (
+                <div key={book} className={styles.terminalLine}>
+                  <span className={styles.terminalPrompt}>&gt;</span>
+                  <span className={styles.terminalTitle}>{book}</span>
+                  <span
+                    className={styles.rainbowStars}
+                    style={{ animationDelay: `${index * 0.4}s` }}
+                  >
+                    ★★★★★
+                  </span>
+                </div>
+              ))}
+              <div className={styles.terminalLine}>
+                <span className={styles.terminalPrompt}>&gt;</span>
+                <span className={styles.cursor}></span>
               </div>
             </div>
           </div>
@@ -225,6 +325,50 @@ export default function AboutPage() {
                 />
               ))}
             </div>
+          </div>
+
+          <div
+            className={`${styles.masterRankTile} ${getTileAnimationClasses("master-rank-teams")}`}
+          >
+            <h2>{masterRankTile.title}</h2>
+            {masterRankTile.content.map((team) => (
+              <div key={team.label} className={styles.teamSection}>
+                <h3 className={styles.teamLabel}>{team.label}</h3>
+                <div className={styles.teamGrid}>
+                  {team.pokemon.map((p) => (
+                    <div
+                      key={p.name}
+                      className={styles.pokemonSlot}
+                      tabIndex={0}
+                    >
+                      <img
+                        src={pokeSprite(p.dexId)}
+                        alt={p.name}
+                        className={styles.pokemonSprite}
+                        loading="lazy"
+                      />
+                      <img
+                        src={itemSprite(p.item)}
+                        alt={p.item.replace(/-/g, " ")}
+                        className={styles.itemSprite}
+                        loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.style.display = "none";
+                        }}
+                      />
+                      <div className={styles.moveTooltip}>
+                        <span className={styles.tooltipName}>{p.name}</span>
+                        {p.moves.map((move) => (
+                          <span key={move} className={styles.tooltipMove}>
+                            {move}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

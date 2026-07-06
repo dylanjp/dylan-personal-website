@@ -19,13 +19,15 @@ const techStack = [
   { name: "AWS", icon: "/aws.svg" },
   { name: "Azure DevOps", icon: "/azure.svg" },
   { name: "Docker", icon: "/docker.svg" },
+  { name: "Linux", icon: "/linux.svg" },
   { name: "GraphQL", icon: "/graphql.svg" },
   { name: "SQL", icon: "/sql.svg" },
+  { name: "PostgreSQL", icon: "/postgres.svg" },
   { name: "Terraform", icon: "/terraform.svg" },
   { name: "Git", icon: "/git.svg" },
+  { name: "OAuth", icon: "/oauth.svg" },
   { name: "Unreal Engine", icon: "/unreal.svg" },
-  //linux
-  //databases
+  { name: "Steamworks", icon: "/steamworks.svg" },
   //Rust
   //Jenkins
 ];
