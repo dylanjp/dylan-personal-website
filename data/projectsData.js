@@ -63,6 +63,21 @@ const projects = [
       { name: "C++", color: "#0091ffff" },
     ],
   },
+  {
+    id: 6,
+    title: "PARADISE",
+    image: "/images/para.png",
+    description:
+      "Pratt's Automated Residential And Data Integration System Engine. My personal home platform. A Next.js dashboard backed by Spring Boot REST APIs, and a PostgreSQL database. Features include task management, notifications, personal file storage, a documentation server, and a health portal.",
+    link: "https://github.com/dylanjp/paradise-fe",
+    technologies: [
+      { name: "Next.js", color: "#ffffffff" },
+      { name: "Spring Boot", color: "#6DB33F" },
+      { name: "PostgreSQL", color: "#4169E1" },
+      { name: "JWT", color: "#fb015bff" },
+      { name: "Java", color: "#FF9900" },
+    ],
+  },
   // Add more project objects here
 ];
 
