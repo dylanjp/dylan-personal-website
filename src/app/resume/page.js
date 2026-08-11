@@ -58,7 +58,7 @@ export default function ResumePage() {
         transition={{ delay: 0.3, duration: 0.8 }}
       >
         <a
-          href="/DPResume2025 .pdf"
+          href="/Dylan_Pratt_SoftwareEngineer_2026.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.pdfButton}
