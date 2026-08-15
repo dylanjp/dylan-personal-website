@@ -142,7 +142,7 @@ export const aboutPageData = [
         ],
       },
       {
-        label: "CHAMPIONS — REG M-B",
+        label: "CHAMPIONS — REG M-B - 1",
         pokemon: [
           {
             name: "Charizard",
@@ -187,22 +187,68 @@ export const aboutPageData = [
           },
         ],
       },
+            {
+        label: "CHAMPIONS — REG M-B - 2",
+        pokemon: [
+          {
+            name: "Charizard",
+            dexId: 10035,
+            item: "charizardite-y",
+            moves: ["Weather Ball", "Protect", "Dragon Pulse", "Heat Wave"],
+          },
+          {
+            name: "Staraptor",
+            dexId: 10308,
+            item: "staraptite",
+            moves: ["Brave Bird", "Close Combat", "Protect", "Roost"],
+          },
+          {
+            name: "Hisuian - Typholsion",
+            dexId: 10233,
+            item: "choice-scarf",
+            moves: ["Eruption", "Shadow Ball", "Solar Beam", "Heat Wave"],
+          },
+          {
+            name: "Garchomp",
+            dexId: 445,
+            item: "life-orb",
+            moves: [
+              "Rock Slide",
+              "Dragon Claw",
+              "Earthquake",
+              "Protect",
+            ],
+          },
+          {
+            name: "Dragapult",
+            dexId: 887,
+            item: "focus-sash",
+            moves: ["Draco Meteor", "Thunderbolt", "Shadow Ball", "Disable"],
+          },
+          {
+            name: "Talonflame",
+            dexId: 663,
+            item: "sitrus-berry",
+            moves: ["Duel Wing Beat", "Feather Dance", "Tailwind", "Quick Guard"],
+          },
+        ],
+      },
     ],
   },
-  {
-    id: "my-car",
-    //title: "MY CAR",
-    subtitle: "TOYOTA 86",
-    type: "image",
-    imageSrc: "/images/toyota86.png",
-  },
+  // {
+  //   id: "my-car",
+  //   //title: "MY CAR",
+  //   subtitle: "TOYOTA 86",
+  //   type: "image",
+  //   imageSrc: "/images/toyota86.png",
+  // },
   {
     id: "favorite-books",
     title: "FAVORITE BOOKS/SERIES",
     type: "terminal-list",
     content: [
-      "The Stormlight Archive",
       "Mistborn",
+      "The Stormlight Archive",
       "Harry Potter",
       "Essentialism",
       "Dungeon Crawler Carl",

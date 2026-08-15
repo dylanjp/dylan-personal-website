@@ -233,7 +233,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div
+          {/* <div
             className={`${styles.carTile} ${getTileAnimationClasses("my-car")}`}
           >
             <h2>{myCarTile.title}</h2>
@@ -246,7 +246,7 @@ export default function AboutPage() {
               />
               <div className={styles.carGlow}></div>
             </div>
-          </div>
+          </div> */}
 
           <div
             className={`${styles.booksTile} ${getTileAnimationClasses("favorite-books")}`}
