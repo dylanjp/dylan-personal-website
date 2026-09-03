@@ -2,7 +2,8 @@
 
 ## Introduction
 
-Hello! Thank you for your interest in my work and life. 2025 was an interesting year. I've dubbed it the "Year of Construction". The Pratt family has been busy constructing basements, games, servers, and memories. 
+Hello! Thank you for your interest in my work and life. 2025 was an interesting year. I've dubbed it the "Year of Construction". The Pratt family has been busy constructing basements, games, servers, and memories.
+
 ## Part 1: Family
 
 ### Losing Grandpa Pratt
@@ -11,7 +12,7 @@ Hello! Thank you for your interest in my work and life. 2025 was an interesting 
 
 Leslie Alan Pratt was a great man, a great farmer, and an amazing grandfather. Finding the right words to capture what he meant to me is difficult. Living near him and my grandmother for most of my life was a huge blessing. As a young boy, I remember him teaching me how to ride a bike. I remember him teaching me how to shoot and play basketball. I remember riding in his pickup truck while he let me snack on his chocolate Twizzlers.
 
-As I got older, my grandfather continued to find ways to make sure I knew he loved and supported me. He always came to my sporting events, church talks, and school events. He would often be at least 30 minutes early. It was a constant source of joy and comfort to arrive and see him and my grandmother already in their seats, cheering for me. Every summer, from the time I was 12 until around 25, I had lunch with him and my grandmother almost daily while I was working on the farm. I cherish the memories of the conversations and joy we shared over those meals. On the days I couldn't have lunch with him because of harvest he’d come check on me while I was driving tractor and bring me ice cream and ask me how I was doing. 
+As I got older, my grandfather continued to find ways to make sure I knew he loved and supported me. He always came to my sporting events, church talks, and school events. He would often be at least 30 minutes early. It was a constant source of joy and comfort to arrive and see him and my grandmother already in their seats, cheering for me. Every summer, from the time I was 12 until around 25, I had lunch with him and my grandmother almost daily while I was working on the farm. I cherish the memories of the conversations and joy we shared over those meals. On the days I couldn't have lunch with him because of harvest he’d come check on me while I was driving tractor and bring me ice cream and ask me how I was doing.
 
 Grandpa was always on my team, and he made sure I knew that. I love and miss him dearly.
 
@@ -42,6 +43,7 @@ In December, my work sent me to the AWS re Invent conference in Las Vegas. I bro
 ## Part 2: Personal Projects & Goals
 
 ### Kate and Dylan’s Experience Goals 2025
+
 ![Website Screenshot](/blogimages/2025-media.png)
 This year we decided to rebrand our “Media Goals” into “Experience Goals.” We changed the name because the idea evolved into wanting to do more than just share specific types of media. At the start of each year, we each pick something for the other person to complete by the end of the year. It’s our fun way of sharing experiences with each other.
 
@@ -51,9 +53,9 @@ I enjoyed all of the shows more than I expected. I was most surprised by The Gre
 
 For Kate, I said she had to beat Halo Combat Evolved with me. She also had to participate in a Halo LAN party. She hasn’t done the LAN party yet because our basement wasn’t finished and we wanted it to be a bigger event. We’re planning to do it in February of 2026, just before Valentine’s Day. Here’s what Kate had to say about Halo Combat Evolved:
 
-"Halo was really different from the other games I’ve played. It took me about half the game to feel like my controller skills were strong enough to actually help Dylan. It takes some time to check ammo levels, switch guns, and aim accurately without thinking. I think I would have to play it through by myself another whole time to be able to use the rocket launcher correctly. lol. 
+"Halo was really different from the other games I’ve played. It took me about half the game to feel like my controller skills were strong enough to actually help Dylan. It takes some time to check ammo levels, switch guns, and aim accurately without thinking. I think I would have to play it through by myself another whole time to be able to use the rocket launcher correctly. lol.
 
-In general, it’s very much a boys game (the only “girl” is an AI in a body suit) and the plot wasn’t as deep, creative, or funny as Ocarina of Time. It’s the perfect game for those times where you just feel like running around and shooting things. 
+In general, it’s very much a boys game (the only “girl” is an AI in a body suit) and the plot wasn’t as deep, creative, or funny as Ocarina of Time. It’s the perfect game for those times where you just feel like running around and shooting things.
 
 I don’t have that inclination very often, so my favorite part was definitely playing it and spending time with Dylan. I think I will enjoy the LAN party too! I’m really excited to have that experience!"
 
@@ -66,6 +68,7 @@ This year I averaged 9,733 steps per day, for a total of 3,552,712 steps across 
 ### Trooper Commando
 
 At the beginning of the year, I developed a small prototype game. It was a multiplayer shooter that could be hosted in the cloud using AWS. It was a fun project to work on, and I did get it running in the cloud. However, I ended up shelving the project before I could polish it and add UI for easy matchmaking. It was mainly a learning exercise. Maybe someday I’ll dust it off again.
+
 ### BOWBOT
 
 This year I’ve been developing a game with my brother Luke called BOWBOT. Luke just graduated with a degree in game design, and he’s been flexing his design muscles while I handle the programming. BOWBOT is a stealth game, and we currently have two levels that we are playtesting. We plan to release the game sometime in 2026.
@@ -94,13 +97,14 @@ For books this year I pretty much just re-read Harry Potter. I was working so mu
 
 ### Movies / TV Shows
 
-For movies, K Pop Demon Hunters easily wins my movie of the year award! It was such a good movie. It was so refreshing to see something so cool and new! The album was actually my number 1 listened to album on Spotify this year. 
+For movies, K Pop Demon Hunters easily wins my movie of the year award! It was such a good movie. It was so refreshing to see something so cool and new! The album was actually my number 1 listened to album on Spotify this year.
 
 I also enjoyed the new Superman movie, and I thought Thunderbolts was really good too. I took Lizzy to see Zootopia 2, and we both loved it.
 
 I _really_ wanted **TRON: Ares** to be good. **TRON: Legacy** is one of my all-time favorite movies, so my expectations were high. Unfortunately, _Ares_ ended up being a disappointment. Though not quite as bad as I expected. One bright spot was the Nine Inch Nails soundtrack, which was actually pretty solid.
 
 As for TV shows, the main thing that stands out is the final season of Stranger Things. I thought it was really well done.
+
 ### Video Games
 
 For video games, the big event this year was the release of the new Nintendo console. I waited in line at GameStop for about four hours and managed to get the last one. Totally worth it.
@@ -112,9 +116,10 @@ I also got really into Hell Divers II this year. Once they announced the ODST co
 I also played through Breath of the Wild on my Switch 2. Zelda in 4K is legendary.
 
 Currently I'm working through Pokémon Legends ZA and Metroid Prime 4. Once I get through those I'm planning on doing a 4k run through Tears of the Kingdom!
+
 ## Part 5: Conclusion & 2026
 
-I should be releasing BOWBOT with Luke sometime in 2026. I'll continue to focus on building the vertical slice for Project Swordbreak. I'm currently working on a program to help me manage my life and household. I'm calling it P.A.R.A.D.I.S.E ( Pratt’s Automated Residential And Data Integration System Engine). Maybe next year I'll go into detail about what it does. 
+I should be releasing BOWBOT with Luke sometime in 2026. I'll continue to focus on building the vertical slice for Project Swordbreak. I'm currently working on a program to help me manage my life and household. I'm calling it P.A.R.A.D.I.S.E ( Pratt’s Automated Residential And Data Integration System Engine). Maybe next year I'll go into detail about what it does.
 
 I’ll also continue updating my website. One of my goals for 2026 is to write a few blog posts.
 
