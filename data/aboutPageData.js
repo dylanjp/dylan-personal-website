@@ -12,7 +12,7 @@ export const aboutPageData = [
     title: "About Me",
     type: "text",
     content:
-      "Hi, I’m Dylan! I live in Utah with my wife Kate and our two kids. By day I’m a full-stack developer, working on frontend experiences and backend systems. I love solving problems, writing code, and investigating techy mysteries. In my spare time, I run my own game studio, where I build adventure games. I love game development. When I’m not in an IDE, I love building computers, reading fantasy novels, lifting weights, playing basketball, or playing games like Zelda, Super Smash Bros, and Pokémon.",
+      "Hi, I’m Dylan! I live in Utah with my wife Kate and our kids. By day I’m a full-stack software engineer. I love solving problems, writing code, and learning about technology. I also run my own video game studio, where I build adventure games. When I’m not in an IDE, I love building computers, reading fantasy novels, lifting weights, playing basketball, or playing games like Zelda, Super Smash Bros, or Pokémon.",
   },
   {
     id: "pokemon-team",
@@ -31,7 +31,7 @@ export const aboutPageData = [
     id: "step-counter",
     title: "2026 STEP COUNTER:",
     type: "counter",
-    content: "2,249,050",
+    content: "2,462,895",
   },
   {
     id: "smash-stats",
@@ -114,18 +114,18 @@ export const aboutPageData = [
             name: "Sylveon",
             dexId: 700,
             item: "sitrus-berry",
-            moves: [
-              "Hyper Voice",
-              "Hyper Beam",
-              "Calm Mind",
-              "Detect",
-            ],
+            moves: ["Hyper Voice", "Hyper Beam", "Calm Mind", "Detect"],
           },
           {
             name: "Arcanine",
             dexId: 59,
             item: "leftovers",
-            moves: ["Will O Wisp", "Close Combat", "Morning Sun", "Flame Charge"],
+            moves: [
+              "Will O Wisp",
+              "Close Combat",
+              "Morning Sun",
+              "Flame Charge",
+            ],
           },
           {
             name: "Dragapult",
@@ -142,7 +142,7 @@ export const aboutPageData = [
         ],
       },
       {
-        label: "CHAMPIONS — REG M-B - 1",
+        label: "CHAMPIONS — REG M-B",
         pokemon: [
           {
             name: "Charizard",
@@ -163,60 +163,14 @@ export const aboutPageData = [
             moves: ["Eruption", "Shadow Ball", "Solar Beam", "Heat Wave"],
           },
           {
-            name: "Metagross",
-            dexId: 376,
+            name: "Dragonite",
+            dexId: 149,
             item: "life-orb",
             moves: [
-              "Explosion",
-              "Bullet Punch",
-              "Earthquake",
-              "Protect",
-            ],
-          },
-          {
-            name: "Dragapult",
-            dexId: 887,
-            item: "focus-sash",
-            moves: ["Draco Meteor", "Thunderbolt", "Shadow Ball", "Disable"],
-          },
-          {
-            name: "Talonflame",
-            dexId: 663,
-            item: "sitrus-berry",
-            moves: ["Duel Wing Beat", "Feather Dance", "Tailwind", "Quick Guard"],
-          },
-        ],
-      },
-            {
-        label: "CHAMPIONS — REG M-B - 2",
-        pokemon: [
-          {
-            name: "Charizard",
-            dexId: 10035,
-            item: "charizardite-y",
-            moves: ["Weather Ball", "Protect", "Dragon Pulse", "Heat Wave"],
-          },
-          {
-            name: "Staraptor",
-            dexId: 10308,
-            item: "staraptite",
-            moves: ["Brave Bird", "Close Combat", "Protect", "Roost"],
-          },
-          {
-            name: "Hisuian - Typholsion",
-            dexId: 10233,
-            item: "choice-scarf",
-            moves: ["Eruption", "Shadow Ball", "Solar Beam", "Heat Wave"],
-          },
-          {
-            name: "Garchomp",
-            dexId: 445,
-            item: "life-orb",
-            moves: [
-              "Rock Slide",
+              "Extreme Speed",
               "Dragon Claw",
-              "Earthquake",
-              "Protect",
+              "Thunder Punch",
+              "Superpower",
             ],
           },
           {
@@ -228,8 +182,8 @@ export const aboutPageData = [
           {
             name: "Talonflame",
             dexId: 663,
-            item: "sitrus-berry",
-            moves: ["Duel Wing Beat", "Feather Dance", "Tailwind", "Quick Guard"],
+            item: "sharp-beak",
+            moves: ["Brave Bird", "Feather Dance", "Tailwind", "Quick Guard"],
           },
         ],
       },

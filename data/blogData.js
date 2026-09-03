@@ -19,7 +19,7 @@ const blogs = [
   //   slug: "monster-hunter-wilds",
   //   tags: ["Reviews"]
   // },
-    {
+  {
     id: "2026-01-06",
     title: "2025 Retrospective",
     image: "/images/2025-logo.png",
